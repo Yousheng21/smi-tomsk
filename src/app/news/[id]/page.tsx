@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Box, Container } from '@mui/material';
 import NewsArticle from './components/NewsArticle';
+import { Suspense } from 'react';
 
 interface NewsPageProps {
   params: Promise<{
@@ -33,7 +34,9 @@ export default async function NewsPage({ params }: NewsPageProps) {
 
   return (
     <>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <Container style={{ padding: 0 }} maxWidth="lg" sx={{ p: 0 }}>
         <Box
           sx={{

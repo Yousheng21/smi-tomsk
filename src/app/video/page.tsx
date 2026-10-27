@@ -4,11 +4,14 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Box, Container, Typography } from '@mui/material';
 import VideoScreenList from './components/VideoScreenList';
+import { Suspense } from 'react';
 
 export default function VideoPage() {
   return (
     <>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px', px: 2, pb: 5, pt: 2 }}>
           <Typography align="center" variant="h2">
