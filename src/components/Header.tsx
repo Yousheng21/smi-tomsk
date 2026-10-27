@@ -7,6 +7,7 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import SearchModal from './SearchModal';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export const Header = () => {
   const pathName = usePathname();
@@ -21,7 +22,9 @@ export const Header = () => {
           justifyContent: 'space-between',
         }}
       >
-        <MobileToolsMenu />
+        <Suspense fallback={null}>
+          <MobileToolsMenu />
+        </Suspense>
         <List sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5, flex: 1 }}>
           {tools.slice(1).map((tool) => (
             <ListItemButton

@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Box, Button, Container, Typography } from '@mui/material';
 import { NewsListScreen } from './components/NewsListScreen';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { defaultCities } from '../home/components/CityModal';
 import { defaultRegions } from '../home/components/RegionModal';
 
@@ -14,7 +14,9 @@ export default function NewsPage() {
 
   return (
     <>
-      <Header />
+      <Suspense fallback={null}>
+        <Header />
+      </Suspense>
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px', px: 2, pb: 5, pt: 2 }}>
           <Typography align="center" variant="h2">

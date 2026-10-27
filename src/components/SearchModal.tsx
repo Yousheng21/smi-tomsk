@@ -65,7 +65,7 @@ export default function SearchModal({ onSearch }: SearchModalProps) {
               mb: 2.5,
             }}
           >
-            <Typography variant="h6" fontWeight={600}>
+            <Typography variant="h6" sx={{ fontWeight: 600 }}>
               Поиск
             </Typography>
 
