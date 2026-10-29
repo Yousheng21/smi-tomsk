@@ -7,14 +7,23 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import SearchModal from './SearchModal';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
+import { useAppStore } from '@/store/appStore';
+import FilterModal from './FilterModal';
+import { filters } from '@/constants/constants';
 
 export const Header = () => {
   const pathName = usePathname();
 
+  const { filter } = useAppStore();
+
+  const [open, setOpen] = useState(false);
+
+  const currentFilter = filters.filter((i) => i.id === filter)[0];
+
   return (
     <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
-      <Box component={'header'} sx={{ py: 4, mb: 5, px: { xs: '16px', md: 0 } }}>
+      <Box component={'header'} sx={{ py: 4, mb: { xs: '10px', md: 5 }, pr: '16px' }}>
         <Stack
           direction={'row'}
           spacing={2}
@@ -26,7 +35,9 @@ export const Header = () => {
           <Suspense fallback={null}>
             <MobileToolsMenu />
           </Suspense>
-          <List sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px', flex: 1, m: 0 }}>
+          <List
+            sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px', flex: 1, width: '100%', m: 0 }}
+          >
             {tools.slice(1).map((tool) => (
               <ListItemButton
                 key={tool.href}
@@ -36,8 +47,7 @@ export const Header = () => {
                   mx: 0,
                   borderRadius: 2,
                   px: '10px',
-                  maxWidth: 91,
-                  //   mb: 0.5,
+                  maxWidth: 158,
                   justifyContent: 'center',
                   backgroundColor: pathName === tool.href ? 'var(--green-50)' : 'transparent',
                 }}
@@ -86,7 +96,7 @@ export const Header = () => {
               spacing={0.1}
               sx={{
                 display: { xs: 'none', lg: 'flex' },
-                borderRight: '0.3px solid grey',
+                borderRight: '1px solid #0D0D0D1A',
                 mr: 2,
                 pr: 2,
               }}
@@ -97,7 +107,7 @@ export const Header = () => {
                   href={link.href}
                   target="_blank"
                   className="btnSocialHeader"
-                  sx={{ py: 1, px: 0, ':hover': {}, minWidth: '50px' }}
+                  sx={{ py: 1, px: 0, ':hover': {}, minWidth: '40px' }}
                   key={index}
                 >
                   {link.icon}
@@ -112,6 +122,7 @@ export const Header = () => {
             />
 
             <Button
+              onClick={() => setOpen(true)}
               sx={{
                 backgroundColor: 'primary.main',
                 borderRadius: '50px',
@@ -131,10 +142,10 @@ export const Header = () => {
                 </Box>
                 <Stack>
                   <Typography sx={{ fontSize: '0.8rem' }} color="textSecondary">
-                    Томские Новости
+                    {currentFilter.title}
                   </Typography>
                   <Typography sx={{ fontSize: '0.6rem' }} color="textSecondary">
-                    Томская область
+                    {currentFilter.region}
                   </Typography>
                 </Stack>
               </Stack>
@@ -142,6 +153,8 @@ export const Header = () => {
           </Stack>
         </Stack>
       </Box>
+
+      <FilterModal open={open} onClose={() => setOpen(false)} />
     </Container>
   );
 };

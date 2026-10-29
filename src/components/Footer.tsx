@@ -7,9 +7,9 @@ import { socialLinks } from './MobileToolsMenu';
 
 export const Footer = () => {
   return (
-    <Box component={'footer'} sx={{ backgroundColor: 'black', px: { xs: 2, xl: 0 }, py: '60px' }}>
+    <Box component={'footer'} sx={{ backgroundColor: 'black', px: '16px', py: '60px' }}>
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
-        <Stack direction={'column'} spacing={{ xs: 3, lg: 7 }}>
+        <Stack direction={'column'} sx={{ px: { xs: 0, xl: '16px' } }} spacing={{ xs: 3, lg: 7 }}>
           <Stack
             direction={{ xs: 'column', lg: 'row' }}
             spacing={2}

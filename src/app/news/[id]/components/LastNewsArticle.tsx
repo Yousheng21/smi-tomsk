@@ -1,4 +1,4 @@
-import { Box, Stack, Typography, Button } from '@mui/material';
+import { Box, Stack, Typography, Button, Divider } from '@mui/material';
 import TrendingFlatIcon from '@mui/icons-material/TrendingFlat';
 import LastNewsArticleList from './LastNewsArticleList';
 
@@ -12,6 +12,8 @@ export const LastNewsArticle = () => {
           <TrendingFlatIcon />
         </Button>
       </Stack>
+
+      <Divider sx={{ my: 5, width: '100%', height: '1px', backgroundColor: '#0D0D0D1A' }} />
 
       <LastNewsArticleList />
     </Box>

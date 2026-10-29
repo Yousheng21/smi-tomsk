@@ -25,7 +25,7 @@ export default function SpareTimePage() {
             gap: '32px',
             alignItems: 'center',
             px: { xs: 2, xl: 0 },
-            pb: 5,
+            pb: { xs: 5, lg: '120px' },
             pt: 2,
           }}
         >

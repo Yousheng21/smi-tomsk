@@ -27,6 +27,7 @@ export default function AboutPage() {
             px: { xs: 2, xl: 0 },
             pb: 5,
             pt: 2,
+            mb: '60px',
           }}
         >
           <Typography align="center" sx={{ fontSize: 36, fontWeight: 700, color: '#0D0D0D' }}>

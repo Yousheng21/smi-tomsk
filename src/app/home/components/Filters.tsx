@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CityModal from './CityModal';
 import RegionModal from './RegionModal';
+import { useAppStore } from '@/store/appStore';
 
 export const Filters = () => {
   const [filter, setFilter] = useState('all');
@@ -11,16 +12,15 @@ export const Filters = () => {
   const [openRegion, setOpenRegion] = useState(false);
   const [region, setRegion] = useState('');
 
+  const filterStore = useAppStore((state) => state.filter);
+
   const resetFilter = () => {
     setCity('');
     setRegion('');
   };
 
   return (
-    <Box
-      component={'section'}
-      sx={{ display: { xs: 'flex', lg: 'none' }, gap: 1, justifyContent: 'center' }}
-    >
+    <Box component={'section'} sx={{ display: { xs: 'flex', lg: 'none' }, gap: 1, width: '100%' }}>
       <Button
         onClick={() => {
           setFilter('all');
@@ -29,9 +29,9 @@ export const Filters = () => {
         sx={{
           backgroundColor: filter === 'all' ? 'primary.main' : 'var(--grey-200)',
           borderRadius: '10px',
-
           py: 1.5,
-          px: '20px',
+          px: '10px',
+          flex: 1,
         }}
       >
         <Typography
@@ -41,60 +41,99 @@ export const Filters = () => {
             color: filter === 'all' ? 'white' : 'var(--grey-500)',
           }}
         >
-          Вся область
+          {filterStore === 1 ? 'Вся область' : 'Весь район'}
         </Typography>
       </Button>
-      <Button
-        onClick={() => setOpenCity(true)}
-        sx={{
-          display: 'flex',
-          gap: 1,
-          borderRadius: '10px',
-
-          py: 1.5,
-
-          px: '12px',
-          backgroundColor: filter === 'city' ? 'primary.main' : 'var(--grey-200)',
-        }}
-      >
-        <Typography
+      {filterStore === 1 ? (
+        <>
+          <Button
+            onClick={() => setOpenCity(true)}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              borderRadius: '10px',
+              py: 1.5,
+              px: '12px',
+              flex: 1,
+              backgroundColor: filter === 'city' ? 'primary.main' : 'var(--grey-200)',
+            }}
+          >
+            <Typography
+              sx={{
+                fontWeight: 700,
+                fontSize: '13px',
+                color: filter === 'city' ? 'white' : 'var(--grey-500)',
+              }}
+            >
+              {city ? city : 'Мой город'}
+            </Typography>
+            <ExpandMoreIcon
+              sx={{ width: 18, height: 18, fill: filter === 'city' ? 'white' : 'var(--grey-500)' }}
+            />
+          </Button>
+          <Button
+            onClick={() => setOpenRegion(true)}
+            sx={{
+              display: 'flex',
+              gap: 1,
+              borderRadius: '10px',
+              py: 1.5,
+              px: '12px',
+              flex: 1,
+              backgroundColor: filter === 'region' ? 'primary.main' : 'var(--grey-200)',
+            }}
+          >
+            <Typography
+              sx={{
+                fontWeight: 700,
+                fontSize: '13px',
+                color: filter === 'region' ? 'white' : 'var(--grey-500)',
+                WebkitLineClamp: 1,
+                overflow: 'hidden',
+                overflowWrap: 'anywhere',
+              }}
+            >
+              {region ? region : 'Мой район'}
+            </Typography>
+            <ExpandMoreIcon
+              sx={{
+                width: 18,
+                height: 18,
+                fill: filter === 'region' ? 'white' : 'var(--grey-500)',
+              }}
+            />
+          </Button>
+        </>
+      ) : (
+        <Button
+          onClick={() => setOpenRegion(true)}
           sx={{
-            fontWeight: 700,
-            fontSize: '13px',
-            color: filter === 'city' ? 'white' : 'var(--grey-500)',
+            display: 'flex',
+            gap: 1,
+            borderRadius: '10px',
+            py: 1.5,
+            flex: 1,
+            px: '12px',
+            backgroundColor: filter === 'region' ? 'primary.main' : 'var(--grey-200)',
           }}
         >
-          {city ? city : 'Мой город'}
-        </Typography>
-        <ExpandMoreIcon
-          sx={{ width: 18, height: 18, fill: filter === 'city' ? 'white' : 'var(--grey-500)' }}
-        />
-      </Button>
-      <Button
-        onClick={() => setOpenRegion(true)}
-        sx={{
-          display: 'flex',
-          gap: 1,
-          borderRadius: '10px',
-          py: 1.5,
-
-          px: '12px',
-          backgroundColor: filter === 'region' ? 'primary.main' : 'var(--grey-200)',
-        }}
-      >
-        <Typography
-          sx={{
-            fontWeight: 700,
-            fontSize: '13px',
-            color: filter === 'region' ? 'white' : 'var(--grey-500)',
-          }}
-        >
-          {region ? region : 'Мой район'}
-        </Typography>
-        <ExpandMoreIcon
-          sx={{ width: 18, height: 18, fill: filter === 'region' ? 'white' : 'var(--grey-500)' }}
-        />
-      </Button>
+          <Typography
+            sx={{
+              fontWeight: 700,
+              fontSize: '13px',
+              color: filter === 'region' ? 'white' : 'var(--grey-500)',
+              WebkitLineClamp: 1,
+              overflow: 'hidden',
+              overflowWrap: 'anywhere',
+            }}
+          >
+            {region ? region : 'Моё поселение'}
+          </Typography>
+          <ExpandMoreIcon
+            sx={{ width: 18, height: 18, fill: filter === 'region' ? 'white' : 'var(--grey-500)' }}
+          />
+        </Button>
+      )}
 
       <CityModal
         open={openCity}

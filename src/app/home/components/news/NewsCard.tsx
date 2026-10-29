@@ -4,7 +4,9 @@ import { Box, Button, Typography, useMediaQuery } from '@mui/material';
 import Link from 'next/link';
 import { defaultCities } from '../CityModal';
 import { defaultRegions } from '../RegionModal';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useAppStore } from '@/store/appStore';
+import { tags2, tags3 } from '@/constants/constants';
 
 export interface NewsCardProps {
   title: string;
@@ -26,10 +28,18 @@ export default function NewsCard({
   area,
 }: NewsCardProps) {
   const isDesktop1200 = useMediaQuery('(min-width: 1200px)');
-  const [currentRegion, setCurrentRegion] = useState('');
+
+  const { filter } = useAppStore();
+
+  const [currentRegion, setCurrentRegion] = useState('Все');
   const [isOpen, setIsOpen] = useState(false);
 
-  const filters = ['Все', ...defaultCities, ...defaultRegions];
+  const filters = useMemo(() => {
+    if (filter === 1) return ['Все', ...defaultCities, ...defaultRegions];
+    if (filter === 2) return tags2;
+    if (filter === 3) return tags3;
+    return [];
+  }, [filter]);
 
   return (
     <>
@@ -45,7 +55,7 @@ export default function NewsCard({
               mt: 2,
             }}
           >
-            {filters.slice(0, isOpen ? filters.length : 15).map((region) => {
+            {filters.slice(0, isOpen ? filters.length : 13).map((region) => {
               const isSelected = currentRegion === region;
 
               return (
@@ -74,7 +84,7 @@ export default function NewsCard({
                 </Button>
               );
             })}
-            {filters.length > 14 && !isOpen && (
+            {filters.length > 12 && !isOpen && (
               <Button
                 onClick={() => setIsOpen(true)}
                 sx={{
@@ -161,7 +171,7 @@ export default function NewsCard({
               mb: 1.5,
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: 3,
+              WebkitLineClamp: image ? 3 : 2,
               overflow: 'hidden',
               overflowWrap: 'anywhere',
               color: image ? 'white' : 'text.primary',

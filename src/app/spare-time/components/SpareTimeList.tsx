@@ -81,7 +81,7 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: '1fr 2fr',
           },
-          my: { xs: 5, xl: '80px' },
+          my: { xs: 5, xl: '40px' },
           gap: { xs: 2, md: 3 },
         }}
       >
@@ -97,7 +97,6 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          mb: 6,
           gap: { xs: 2, md: 3 },
         }}
       >

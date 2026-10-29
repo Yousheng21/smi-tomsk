@@ -45,6 +45,7 @@ export default async function NewsPage({ params }: NewsPageProps) {
             display: 'flex',
             flexDirection: 'column',
             gap: 3,
+            px: '16px',
           }}
         >
           <NewsArticle news={news} />
