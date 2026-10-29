@@ -7,11 +7,16 @@ import Link from 'next/link';
 export const PreviewEvents = () => {
   return (
     <Box component={'section'}>
-      <Stack direction={'row'} sx={{ justifyContent: 'space-between', mb: 3 }}>
-        <Typography variant="h2">Анонсы и события</Typography>
+      <Stack
+        direction={'row'}
+        sx={{ justifyContent: 'space-between', alignItems: 'center', mb: 3 }}
+      >
+        <Typography sx={{ fontSize: { xs: 20, md: 36, fontWeight: 700 } }}>
+          Анонсы и события
+        </Typography>
         <Link href={'/spare-time'}>
           <Button sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography>Все анонсы</Typography>
+            <Typography sx={{ color: 'var(--accent)', fontWeight: 600 }}>Все анонсы</Typography>
             <TrendingFlatIcon />
           </Button>
         </Link>

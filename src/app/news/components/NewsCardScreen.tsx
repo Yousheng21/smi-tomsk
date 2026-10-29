@@ -83,7 +83,7 @@ export default function NewsCardScreen({
               mb: 1.5,
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
-              WebkitLineClamp: 3,
+              WebkitLineClamp: 2,
               overflow: 'hidden',
               overflowWrap: 'anywhere',
               color: image ? 'white' : 'text.primary',
@@ -117,7 +117,8 @@ export default function NewsCardScreen({
               variant="caption"
               sx={{
                 fontSize: 12,
-                color: 'var(--primary)',
+                color: image ? 'var(--primary)' : 'var(--accent)',
+                fontWeight: image ? 700 : 500,
                 textAlign: 'right',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -126,7 +127,7 @@ export default function NewsCardScreen({
                 borderRadius: 2,
                 p: 0.5,
                 px: 1,
-                backgroundColor: !image ? 'var(--green-50)' : 'transparent',
+                backgroundColor: !image ? '#16AD621A' : 'transparent',
               }}
             >
               {district}

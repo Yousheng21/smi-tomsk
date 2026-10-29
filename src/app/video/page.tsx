@@ -13,12 +13,22 @@ export default function VideoPage() {
         <Header />
       </Suspense>
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px', px: 2, pb: 5, pt: 2 }}>
-          <Typography align="center" variant="h2">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+            px: 2,
+            pb: 5,
+            pt: 2,
+            mb: 10,
+          }}
+        >
+          <Typography align="center" sx={{ fontSize: 36, fontWeight: 700, color: '#0D0D0D' }}>
             Видео
           </Typography>
-          <Typography align="center" variant="body2">
-            Видео — СМИ.Сердце района
+          <Typography align="center" sx={{ fontSize: '20px', fontWeight: 500 }}>
+            Видео — <b>СМИ</b>.Сердце района
           </Typography>
 
           <VideoScreenList />

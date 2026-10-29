@@ -9,6 +9,7 @@ export const newsDefault: NewsCardProps[] = [
     district: 'Зырянский р-н',
     image: '/images/news1.jpg',
     href: '/news/1',
+    area: 'featured',
   },
   {
     title: 'На проспекте Ленина высаживают новые клены: зеленая аллея обновится к осени',
@@ -16,6 +17,7 @@ export const newsDefault: NewsCardProps[] = [
     district: 'Зырянский р-н',
     image: '/images/news2.jpg',
     href: '/news/2',
+    area: 'second',
   },
   {
     title:
@@ -24,6 +26,7 @@ export const newsDefault: NewsCardProps[] = [
     district: 'Чаинский р-н',
     image: '/images/news3.jpg',
     href: '/news/',
+    area: 'third',
   },
   {
     title: 'Томский художник представил арт-объект «Эхо Университетской рощи» в центре города.',
@@ -31,6 +34,7 @@ export const newsDefault: NewsCardProps[] = [
     district: 'Зырянский р-н',
     image: null,
     href: '/news/4',
+    area: 'fourth',
   },
   {
     title: 'В новом ЖК на Иркутском тракте тестируют «умные» лифты с голосовым управлением.',
@@ -38,6 +42,7 @@ export const newsDefault: NewsCardProps[] = [
     district: 'Зырянский р-н',
     image: null,
     href: '/news/5',
+    area: 'fifth',
   },
 ];
 

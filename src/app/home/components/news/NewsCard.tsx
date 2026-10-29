@@ -13,11 +13,23 @@ export interface NewsCardProps {
   image?: string | null;
   href?: string;
   index?: number;
+  area?: string;
 }
 
-export default function NewsCard({ title, date, district, image, href, index }: NewsCardProps) {
+export default function NewsCard({
+  title,
+  date,
+  district,
+  image,
+  href,
+  index,
+  area,
+}: NewsCardProps) {
   const isDesktop1200 = useMediaQuery('(min-width: 1200px)');
   const [currentRegion, setCurrentRegion] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const filters = ['Все', ...defaultCities, ...defaultRegions];
 
   return (
     <>
@@ -33,7 +45,7 @@ export default function NewsCard({ title, date, district, image, href, index }: 
               mt: 2,
             }}
           >
-            {[...defaultCities, ...defaultRegions].map((region) => {
+            {filters.slice(0, isOpen ? filters.length : 15).map((region) => {
               const isSelected = currentRegion === region;
 
               return (
@@ -46,11 +58,11 @@ export default function NewsCard({ title, date, district, image, href, index }: 
                     minWidth: 0,
                     px: 1.75,
                     py: 1,
-                    borderRadius: 1.5,
+                    borderRadius: '50px',
                     textTransform: 'none',
-                    fontSize: 14,
-                    fontWeight: isSelected ? 600 : 400,
-                    color: isSelected ? 'text.secondary' : 'text.primary',
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: isSelected ? 'text.secondary' : '#0D0D0D99',
                     backgroundColor: isSelected ? 'primary.light' : 'grey.100',
                     transition: 'background-color 0.2s, color 0.2s',
                     '&:hover': {
@@ -62,7 +74,34 @@ export default function NewsCard({ title, date, district, image, href, index }: 
                 </Button>
               );
             })}
+            {filters.length > 14 && !isOpen && (
+              <Button
+                onClick={() => setIsOpen(true)}
+                sx={{
+                  minWidth: 0,
+                  px: 1.75,
+                  py: 1,
+                  borderRadius: '50px',
+                  textTransform: 'none',
+                  fontSize: 13,
+                  fontWeight: 400,
+                  color: '#0D0D0D99',
+                  backgroundColor: 'grey.100',
+                  transition: 'background-color 0.2s, color 0.2s',
+                  '&:hover': {
+                    backgroundColor: 'grey.200',
+                  },
+                }}
+              >
+                <Typography>...</Typography>
+              </Button>
+            )}
           </Box>
+          {isOpen && (
+            <Button onClick={() => setIsOpen(false)}>
+              <Typography sx={{ textDecoration: 'underline' }}>Скрыть</Typography>
+            </Button>
+          )}
         </Box>
       )}
       <Box
@@ -75,10 +114,10 @@ export default function NewsCard({ title, date, district, image, href, index }: 
           justifyContent: 'flex-end',
           width: '100%',
           minWidth: 0,
-          aspectRatio: { xs: image ? '4 / 3' : 'auto', lg: image ? '2 / 1' : 'auto' },
+          height: image ? '312px' : '140px',
           overflow: 'hidden',
           borderRadius: 3,
-          height: 'auto',
+          // height: 'auto',
           textDecoration: 'none',
           color: '#fff',
           backgroundColor: '#F3F3F3',
@@ -100,18 +139,7 @@ export default function NewsCard({ title, date, district, image, href, index }: 
           },
           gridArea: {
             xs: 'auto',
-            lg:
-              index === 0
-                ? 'featured'
-                : index === 1
-                  ? 'second'
-                  : index === 2
-                    ? 'third'
-                    : index === 3
-                      ? 'fourth'
-                      : index === 4
-                        ? 'fifth'
-                        : 'sixth',
+            lg: area,
           },
         }}
       >
@@ -167,7 +195,8 @@ export default function NewsCard({ title, date, district, image, href, index }: 
               variant="caption"
               sx={{
                 fontSize: 12,
-                color: 'var(--primary)',
+                color: image ? 'var(--primary)' : 'var(--accent)',
+                fontWeight: image ? 700 : 500,
                 textAlign: 'right',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -176,7 +205,7 @@ export default function NewsCard({ title, date, district, image, href, index }: 
                 borderRadius: 2,
                 p: 0.5,
                 px: 1,
-                backgroundColor: !image ? 'var(--green-50)' : 'transparent',
+                backgroundColor: !image ? '#16AD621A' : 'transparent',
               }}
             >
               {district}

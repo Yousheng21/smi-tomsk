@@ -38,11 +38,11 @@ export const Banner = ({
       >
         <Typography sx={{ letterSpacing: '14%' }}>РЕКЛАМА</Typography>
       </Box>
-      <Stack sx={{ justifyItems: 'center', alignItems: 'center' }} spacing={1}>
-        <Typography sx={{ fontWeight: 700, fontSize: 20 }}>
-          Место для баннера {width}×{height}
+      <Stack sx={{ alignSelf: 'center', px: { xs: 2, lg: 10 } }} spacing={1}>
+        <Typography align="center" sx={{ fontWeight: 700, maxWidth: 329, fontSize: 20 }}>
+          Место для баннера {width}×{height + 40}
         </Typography>
-        <Typography sx={{ fontWeight: 500, fontSize: 16 }}>
+        <Typography align="center" sx={{ fontWeight: 500, maxWidth: 329, fontSize: 16 }}>
           Слот принимает изображение или произвольный HTML-код из админки
         </Typography>
       </Stack>

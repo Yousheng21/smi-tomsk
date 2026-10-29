@@ -57,13 +57,14 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
         <Button
           sx={{
             position: 'absolute',
-            top: '35%',
+            top: '30%',
             left: '50%',
+            zIndex: 999,
             transform: 'translate(-50%, -50%)',
-            width: 64,
-            height: 64,
+            width: 109,
+            height: 109,
             borderRadius: '50%',
-            bgcolor: 'rgba(0, 0, 0, 0.65)',
+            bgcolor: '#00000073',
             color: '#fff',
             display: 'flex',
             alignItems: 'center',
@@ -71,21 +72,46 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
             pointerEvents: 'none',
           }}
         >
-          <PlayArrowRoundedIcon sx={{ fontSize: 42, ml: 0.4 }} />
+          <PlayArrowRoundedIcon sx={{ fontSize: 64 }} />
         </Button>
-        <Image
-          src={image ?? ''}
-          alt={title}
-          height={273}
-          width={200}
-          style={{
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
+        <Box
+          sx={{
+            position: 'relative',
             width: '100%',
-            height: '60%',
+            height: '273px',
+            flexShrink: 0,
+            overflow: 'hidden',
+
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              height: '200px',
+              background:
+                'linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%)',
+              pointerEvents: 'none',
+              zIndex: 2,
+            },
           }}
-        />
-        <Box sx={{ p: { xs: 1.5, sm: 2 } }}>
+        >
+          <Image
+            src={image ?? ''}
+            alt={title}
+            height={273}
+            width={200}
+            className="news-card-image"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+              transition: 'transform 0.25s ease',
+            }}
+          />
+        </Box>
+        <Box sx={{ p: '20px' }}>
           <Typography
             variant="h6"
             component="h3"
@@ -129,7 +155,8 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
               variant="caption"
               sx={{
                 fontSize: 12,
-                color: 'var(--primary)',
+                color: 'var(--accent)',
+                fontWeight: image ? 700 : 500,
                 textAlign: 'right',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -138,7 +165,7 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
                 borderRadius: 2,
                 p: 0.5,
                 px: 1,
-                backgroundColor: 'var(--green-50)',
+                backgroundColor: '#16AD621A',
               }}
             >
               {district}

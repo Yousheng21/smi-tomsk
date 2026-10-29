@@ -7,11 +7,16 @@ import Link from 'next/link';
 export const LastNews = () => {
   return (
     <Box component={'section'}>
-      <Stack direction={'row'} sx={{ justifyContent: 'space-between', mb: 3 }}>
-        <Typography variant="h2">Последние новости</Typography>
+      <Stack
+        direction={'row'}
+        sx={{ justifyContent: 'space-between', alignItems: 'center', mb: 3 }}
+      >
+        <Typography sx={{ fontSize: { xs: 20, md: 36, fontWeight: 700 } }}>
+          Последние новости
+        </Typography>
         <Link href={'/news'}>
           <Button sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography>Все новости</Typography>
+            <Typography sx={{ color: 'var(--accent)', fontWeight: 600 }}>Все новости</Typography>
             <TrendingFlatIcon />
           </Button>
         </Link>

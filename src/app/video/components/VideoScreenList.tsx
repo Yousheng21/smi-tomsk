@@ -85,6 +85,7 @@ export default function VideoScreenList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
+          mt: 8,
           gap: { xs: 2, md: 3 },
         }}
       >
@@ -94,10 +95,17 @@ export default function VideoScreenList() {
       </Box>
 
       <Button
-        sx={{ backgroundColor: 'black', borderRadius: 3, px: 2, py: 1, alignSelf: 'center', mt: 8 }}
+        sx={{
+          backgroundColor: 'black',
+          borderRadius: 3,
+          px: 2,
+          py: 1,
+          alignSelf: 'center',
+          mt: '32px',
+        }}
       >
         <Typography color="textSecondary" align="center">
-          Показать ещё новости
+          Показать ещё
         </Typography>
       </Button>
 

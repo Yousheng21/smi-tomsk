@@ -27,6 +27,30 @@ const events: PreviewCardProps[] = [
     href: '/preview/3',
     desc: 'Разбор мер поддержки, гранты до 5 млн рублей и защита проектов перед комиссией.',
   },
+  {
+    title: 'День города: программа на трёх площадках',
+    date: { day: '12', month: 'августа' },
+    district: 'Томск, пл. Новособорная',
+    image: '/images/preview/preview1.png',
+    href: '/preview/4',
+    desc: 'Открытие в полдень на Новособорной, вечерний концерт и салют над Томью.',
+  },
+  {
+    title: 'Ярмарка фермерских хозяйств области',
+    date: { day: '18', month: 'августа' },
+    district: 'Асино, площадь Ленина',
+    image: '/images/preview/preview2.png',
+    href: '/preview/5',
+    desc: 'Разбор мер поддержки, гранты до 5 млн рублей и защита проектов перед комиссией.',
+  },
+  {
+    title: 'Форум сельских предпринимателей «Своё дело»',
+    date: { day: '22', month: 'августа' },
+    district: 'Колпашево, ДК «Лесопильщик»',
+    image: '/images/preview/preview3.png',
+    href: '/preview/6',
+    desc: 'Разбор мер поддержки, гранты до 5 млн рублей и защита проектов перед комиссией.',
+  },
 ];
 
 export default function SpareTimeList() {
@@ -41,6 +65,7 @@ export default function SpareTimeList() {
             lg: 'repeat(3, minmax(0, 1fr))',
           },
           gap: { xs: 2, md: 3 },
+          rowGap: { xl: '80px' },
         }}
       >
         {events.map((item) => (
@@ -56,7 +81,7 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: '1fr 2fr',
           },
-          mt: 0,
+          my: { xs: 5, xl: '80px' },
           gap: { xs: 2, md: 3 },
         }}
       >
@@ -72,10 +97,11 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
+          mb: 6,
           gap: { xs: 2, md: 3 },
         }}
       >
-        {events.map((item) => (
+        {events.slice(3).map((item) => (
           <PreviewCard key={item.href} {...item} />
         ))}
       </Box>

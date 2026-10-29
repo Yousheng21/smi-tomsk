@@ -75,15 +75,8 @@ export default function MobileToolsMenu() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <>
-      <IconButton
-        aria-label="Открыть меню"
-        onClick={() => setOpen(true)}
-        sx={{
-          display: { xs: 'inline-flex', md: 'none' },
-          flex: 1,
-        }}
-      >
+    <Box sx={{ justifySelf: 'flex-start', flex: 1, display: { xs: 'inline-flex', md: 'none' } }}>
+      <IconButton aria-label="Открыть меню" onClick={() => setOpen(true)}>
         <IconBurgerMenu />
       </IconButton>
 
@@ -207,6 +200,6 @@ export default function MobileToolsMenu() {
           </Stack>
         </Box>
       </Drawer>
-    </>
+    </Box>
   );
 }

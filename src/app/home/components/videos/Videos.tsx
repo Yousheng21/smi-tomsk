@@ -11,7 +11,7 @@ export const Videos = () => {
         <Typography variant="h2">Видео</Typography>
         <Link href={'/video'}>
           <Button sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Typography>Все видео</Typography>
+            <Typography sx={{ color: 'var(--accent)', fontWeight: 600 }}>Все видео</Typography>
             <TrendingFlatIcon />
           </Button>
         </Link>

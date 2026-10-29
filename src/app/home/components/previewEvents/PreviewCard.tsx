@@ -27,8 +27,9 @@ export default function PreviewCard({
       href={href ?? '#'}
       sx={{
         position: 'relative',
-        width: '100%',
-        minWidth: 0,
+        // width: '100%',
+        // minWidth: 0,
+        height: { xs: 312, lg: 525 },
         // aspectRatio: image ? '4 / 3' : 'auto',
         overflow: 'hidden',
         borderRadius: 3,
@@ -83,7 +84,7 @@ export default function PreviewCard({
             {date.month}
           </Typography>
         </Box>
-        <Box sx={{ p: 1.5, mt: 5, display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+        <Box sx={{ mt: 5, display: 'flex', flexDirection: 'column', gap: 1.5, p: 2 }}>
           <Typography
             variant="h6"
             component="h3"
@@ -126,6 +127,8 @@ export default function PreviewCard({
               variant="caption"
               sx={{
                 fontSize: 12,
+                color: 'textSecondary',
+                fontWeight: image ? 700 : 500,
                 textAlign: 'right',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
@@ -134,7 +137,7 @@ export default function PreviewCard({
                 borderRadius: 2,
                 p: 0.5,
                 px: 1,
-                backgroundColor: !image ? 'var(--green-50)' : 'transparent',
+                backgroundColor: !image ? '#16AD621A' : 'transparent',
               }}
             >
               {district}
