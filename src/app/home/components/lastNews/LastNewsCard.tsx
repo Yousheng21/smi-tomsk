@@ -113,7 +113,8 @@ export default function LastNewsCard({
             variant="caption"
             sx={{
               fontSize: 12,
-              color: 'var(--primary)',
+              color: image ? 'var(--primary)' : 'var(--accent)',
+              fontWeight: image ? 700 : 500,
               textAlign: 'right',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
@@ -122,7 +123,7 @@ export default function LastNewsCard({
               borderRadius: 2,
               p: 0.5,
               px: 1,
-              backgroundColor: !image ? 'var(--green-50)' : 'transparent',
+              backgroundColor: !image ? '#16AD621A' : 'transparent',
             }}
           >
             {district}

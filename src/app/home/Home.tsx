@@ -33,7 +33,7 @@ export const Home = () => {
       sx={{ px: 2, pb: 5, pt: 2, display: 'flex', flexDirection: 'column', gap: 6 }}
     >
       <Typography align="center" variant="h2">
-        Новости Томской <br /> области
+        Новости Томской области
       </Typography>
       <Stack
         direction={{ xs: 'column', md: 'row' }}
@@ -43,7 +43,7 @@ export const Home = () => {
           borderRadius: { xs: 2, md: '50px' },
           alignSelf: { xs: 'auto', md: 'center' },
           p: 0.5,
-          width: { xs: 'auto', md: '70%' },
+          //   width: { xs: 'auto', md: 581 },
         }}
       >
         {news.map((i) => (
@@ -52,7 +52,7 @@ export const Home = () => {
             onClick={() => setSelectNews(i.id)}
             sx={{
               backgroundColor: selectNews === i.id ? 'primary.main' : 'transparent',
-              width: '100%',
+              width: { xs: '100%', md: 197 },
               mt: 3,
               borderRadius: { xs: 2, md: '50px' },
               py: 1,
@@ -64,24 +64,35 @@ export const Home = () => {
               },
             }}
           >
-            <Stack direction={'row'} sx={{ alignItems: 'center' }} spacing={1}>
-              {selectNews === i.id && <FmdGoodOutlinedIcon sx={{ fill: 'white' }} />}
+            <Stack direction={'row'} sx={{ alignItems: 'flex-start' }} spacing={0.5}>
+              {selectNews === i.id && (
+                <FmdGoodOutlinedIcon
+                  sx={{
+                    fill: 'white',
+                    width: 14,
+                    height: { xs: 24, md: 20 },
+                    alignSelf: 'flex-start',
+                  }}
+                />
+              )}
 
-              <Typography
-                variant="body1"
-                sx={{ fontWeight: 600 }}
-                color={selectNews === i.id ? 'textSecondary' : 'textPrimary'}
-              >
-                {i.title}
-              </Typography>
+              <Stack>
+                <Typography
+                  variant="body1"
+                  sx={{ fontWeight: 600, fontSize: { md: '13px' } }}
+                  color={selectNews === i.id ? 'textSecondary' : 'textPrimary'}
+                >
+                  {i.title}
+                </Typography>
+                <Typography
+                  variant="caption"
+                  sx={{ fontWeight: 400, fontSize: { md: '10px' } }}
+                  color={selectNews === i.id ? 'textSecondary' : 'textPrimary'}
+                >
+                  {i.region}
+                </Typography>
+              </Stack>
             </Stack>
-            <Typography
-              variant="caption"
-              sx={{ fontWeight: 400 }}
-              color={selectNews === i.id ? 'textSecondary' : 'textPrimary'}
-            >
-              {i.region}
-            </Typography>
           </Button>
         ))}
       </Stack>

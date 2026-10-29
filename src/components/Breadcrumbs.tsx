@@ -40,10 +40,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             }}
           >
             {index > 0 && (
-              <Typography
-                component="span"
-                sx={{ color: 'text.primary', fontSize: { xs: '0.7rem', md: '1rem' } }}
-              >
+              <Typography component="span" sx={{ color: '#0D0D0D', fontSize: 14 }}>
                 —
               </Typography>
             )}
@@ -53,12 +50,12 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                 component={Link}
                 href={item.href}
                 sx={{
-                  color: 'text.primary',
+                  color: '#0D0D0D',
                   textDecoration: 'none',
                   '&:hover': {
                     color: 'primary.main',
                   },
-                  fontSize: { xs: '0.7rem', md: '1rem' },
+                  fontSize: 14,
                 }}
               >
                 {item.label}
@@ -67,9 +64,9 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
               <Typography
                 component="span"
                 sx={{
-                  color: 'text.primary',
-                  fontWeight: isLast ? 600 : 400,
-                  fontSize: { xs: '0.7rem', md: '1rem' },
+                  color: '#0D0D0D',
+                  fontWeight: 400,
+                  fontSize: 14,
                 }}
               >
                 {item.label}

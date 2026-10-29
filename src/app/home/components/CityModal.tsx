@@ -89,7 +89,7 @@ export default function CityModal({
                   minWidth: 0,
                   px: 1.75,
                   py: 1,
-                  borderRadius: 1.5,
+                  borderRadius: '50px',
                   textTransform: 'none',
                   fontSize: 14,
                   fontWeight: isSelected ? 600 : 400,

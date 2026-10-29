@@ -30,8 +30,8 @@ export function getAppTheme(mode: ThemeMode) {
       },
     },
     typography: {
-      fontFamily: 'Arial, sans-serif',
-      htmlFontSize: 16,
+      fontFamily: 'var(--font-manrope), sans-serif',
+      htmlFontSize: 14,
 
       h1: {
         fontSize: '2.25rem',

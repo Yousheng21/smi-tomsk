@@ -28,9 +28,10 @@ export const Filters = () => {
         }}
         sx={{
           backgroundColor: filter === 'all' ? 'primary.main' : 'var(--grey-200)',
-          borderRadius: 2,
-          py: 1,
-          px: 1.5,
+          borderRadius: '10px',
+
+          py: 1.5,
+          px: '20px',
         }}
       >
         <Typography
@@ -48,9 +49,11 @@ export const Filters = () => {
         sx={{
           display: 'flex',
           gap: 1,
-          borderRadius: 2,
-          py: 1,
-          px: 1.5,
+          borderRadius: '10px',
+
+          py: 1.5,
+
+          px: '12px',
           backgroundColor: filter === 'city' ? 'primary.main' : 'var(--grey-200)',
         }}
       >
@@ -63,16 +66,19 @@ export const Filters = () => {
         >
           {city ? city : 'Мой город'}
         </Typography>
-        <ExpandMoreIcon sx={{ fill: filter === 'city' ? 'white' : 'var(--grey-500)' }} />
+        <ExpandMoreIcon
+          sx={{ width: 18, height: 18, fill: filter === 'city' ? 'white' : 'var(--grey-500)' }}
+        />
       </Button>
       <Button
         onClick={() => setOpenRegion(true)}
         sx={{
           display: 'flex',
           gap: 1,
-          borderRadius: 2,
-          py: 1,
-          px: 1.5,
+          borderRadius: '10px',
+          py: 1.5,
+
+          px: '12px',
           backgroundColor: filter === 'region' ? 'primary.main' : 'var(--grey-200)',
         }}
       >
@@ -85,7 +91,9 @@ export const Filters = () => {
         >
           {region ? region : 'Мой район'}
         </Typography>
-        <ExpandMoreIcon sx={{ fill: filter === 'region' ? 'white' : 'var(--grey-500)' }} />
+        <ExpandMoreIcon
+          sx={{ width: 18, height: 18, fill: filter === 'region' ? 'white' : 'var(--grey-500)' }}
+        />
       </Button>
 
       <CityModal

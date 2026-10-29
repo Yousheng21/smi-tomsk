@@ -1,7 +1,7 @@
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Stack, Typography } from '@mui/material';
 import NewsArticle from './components/NewsArticle';
 import { Suspense } from 'react';
 
@@ -37,20 +37,16 @@ export default async function NewsPage({ params }: NewsPageProps) {
       <Suspense fallback={null}>
         <Header />
       </Suspense>
-      <Container style={{ padding: 0 }} maxWidth="lg" sx={{ p: 0 }}>
+      <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
         <Box
           sx={{
-            px: 2,
             pb: 5,
             pt: 2,
             display: 'flex',
             flexDirection: 'column',
             gap: 3,
-            maxWidth: 900,
-            mx: 'auto',
           }}
         >
-          <Breadcrumbs items={[{ label: 'Новости', href: '/news' }, { label: newsTitle }]} />
           <NewsArticle news={news} />
         </Box>
       </Container>

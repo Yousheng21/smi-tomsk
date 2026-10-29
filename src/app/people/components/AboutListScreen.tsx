@@ -55,11 +55,12 @@ export const aboutDefault: AboutCardProps[] = [
     area: 'sixth',
   },
   {
-    title: 'В новом ЖК на Иркутском тракте тестируют «умные» лифты с голосовым управлением.',
+    title: 'Томский художник представил арт-объект «Эхо Университетской рощи» в центре города.',
     date: '10.08.2026 • 09:30',
     district: 'Зырянский р-н',
-    image: '/images/about/about1.jpg',
+    image: null,
     href: '/news/7',
+    area: 'seven',
   },
   {
     title: 'В новом ЖК на Иркутском тракте тестируют «умные» лифты с голосовым управлением.',
@@ -67,20 +68,59 @@ export const aboutDefault: AboutCardProps[] = [
     district: 'Зырянский р-н',
     image: null,
     href: '/news/8',
+    area: 'eight',
   },
   {
-    title: 'В новом ЖК на Иркутском тракте тестируют «умные» лифты с голосовым управлением.',
+    title:
+      'На V региональном этапе спартакиады пенсионеров России в Томской области команда «Клуба ветеранов спорта Томского района» стала лучшей среди команд сельских районов',
     date: '10.08.2026 • 09:30',
     district: 'Зырянский р-н',
     image: '/images/about/about1.jpg',
     href: '/news/9',
+    area: 'nine',
+  },
+  {
+    title:
+      'На V региональном этапе спартакиады пенсионеров России в Томской области команда «Клуба ветеранов спорта Томского района» стала лучшей среди команд сельских районов',
+    date: '10.08.2026 • 09:30',
+    district: 'Зырянский р-н',
+    image: '/images/about/about1.jpg',
+    href: '/news/10',
+    area: 'ten',
+  },
+  {
+    title:
+      'На V региональном этапе спартакиады пенсионеров России в Томской области команда «Клуба ветеранов спорта Томского района» стала лучшей среди команд сельских районов',
+    date: '10.08.2026 • 09:30',
+    district: 'Зырянский р-н',
+    image: '/images/about/about1.jpg',
+    href: '/news/11',
+    area: 'eleven',
+  },
+  {
+    title:
+      'На V региональном этапе спартакиады пенсионеров России в Томской области команда «Клуба ветеранов спорта Томского района» стала лучшей среди команд сельских районов',
+    date: '10.08.2026 • 09:30',
+    district: 'Зырянский р-н',
+    image: '/images/about/about1.jpg',
+    href: '/news/12',
+    area: 'twelwe',
+  },
+  {
+    title: 'Томский художник представил арт-объект «Эхо Университетской рощи» в центре города.',
+    date: '10.08.2026 • 09:30',
+    district: 'Зырянский р-н',
+    image: null,
+    href: '/news/13',
+    area: 'thirteen',
   },
   {
     title: 'В новом ЖК на Иркутском тракте тестируют «умные» лифты с голосовым управлением.',
     date: '10.08.2026 • 09:30',
     district: 'Зырянский р-н',
     image: null,
-    href: '/news/10',
+    href: '/news/14',
+    area: 'fourteen',
   },
 ];
 
@@ -113,7 +153,7 @@ export const AboutListScreen = () => {
         ))}
         <Banner />
       </Box>
-      <Divider sx={{ my: 5 }} />
+      <Divider sx={{ my: 5, width: '100%', height: '1px', backgroundColor: '#0D0D0D1A' }} />
       <Box
         sx={{
           display: 'grid',
@@ -122,16 +162,32 @@ export const AboutListScreen = () => {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
+          gridTemplateAreas: {
+            xs: 'none',
+            sm: 'none',
+            lg: `
+        "seven nine ten"
+        "eight nine ten"
+        "eleven twelwe thirteen"
+        "eleven twelwe fourteen"
+      `,
+          },
           gap: { xs: 2, md: 3 },
         }}
       >
-        {aboutDefault.slice(7).map((item, index) => (
+        {aboutDefault.slice(6).map((item, index) => (
           <AboutCardScreen key={item.href} {...item} index={index} />
         ))}
-        <Banner isArea={false} />
       </Box>
       <Button
-        sx={{ backgroundColor: 'black', borderRadius: 3, px: 2, py: 1, alignSelf: 'center', mt: 8 }}
+        sx={{
+          backgroundColor: 'black',
+          borderRadius: 3,
+          px: 2,
+          py: 1,
+          alignSelf: 'center',
+          mt: '32px',
+        }}
       >
         <Typography color="textSecondary" align="center">
           Показать ещё новости

@@ -40,9 +40,15 @@ export const IconBurgerMenu = () => {
   );
 };
 
-export const IconLogo = () => {
+export const IconLogo = ({ width = 36, height = 36 }) => {
   return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 36 36"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <rect width="36" height="36" rx="8" fill="#0E8743" />
       <g clipPath="url(#clip0_47_4507)">
         <path

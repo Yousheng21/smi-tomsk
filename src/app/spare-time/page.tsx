@@ -18,17 +18,27 @@ export default function SpareTimePage() {
         <Header />
       </Suspense>
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '32px', px: 2, pb: 5, pt: 2 }}>
-          <Typography align="center" variant="h2">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+            alignItems: 'center',
+            px: { xs: 2, xl: 0 },
+            pb: 5,
+            pt: 2,
+          }}
+        >
+          <Typography align="center" sx={{ fontSize: 36, fontWeight: 700, color: '#0D0D0D' }}>
             Анонсы и события
           </Typography>
-          <Typography align="center" variant="body2">
+          <Typography align="center" sx={{ maxWidth: 967, fontSize: '20px', fontWeight: 500 }}>
             Здесь нет высоких материй, только наша с вами повседневность. Гид по лучшим местам для
             отдыха, честные советы по открытию своего дела без иллюзий, разговоры о деньгах на
             пальцах и кулинарные батлы с поиском идеального маринада.
           </Typography>
 
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: '50px' }}>
             <Typography variant="h6" sx={{ fontWeight: '700', fontSize: '16px' }}>
               Новости по тегам:
             </Typography>
@@ -39,51 +49,50 @@ export default function SpareTimePage() {
                 justifyContent: 'center',
                 gap: 1,
                 mt: 2,
+                maxWidth: 967,
               }}
             >
-              {['Все', ...defaultCities, ...defaultRegions]
-                .slice(0, isOpen ? [...defaultCities, ...defaultRegions].length : 8)
-                .map((region) => {
-                  const isSelected = currentRegion === region;
+              {['Все', ...defaultCities, ...defaultRegions].map((region) => {
+                const isSelected = currentRegion === region;
 
-                  return (
-                    <Button
-                      key={region}
-                      variant="text"
-                      onClick={() => setCurrentRegion(region)}
-                      aria-pressed={isSelected}
-                      sx={{
-                        minWidth: 0,
-                        px: 1.75,
-                        py: 1,
-                        borderRadius: 1.5,
-                        textTransform: 'none',
-                        fontSize: 14,
-                        fontWeight: isSelected ? 600 : 400,
-                        color: isSelected ? 'text.secondary' : 'text.primary',
-                        backgroundColor: isSelected ? 'primary.light' : 'grey.100',
-                        transition: 'background-color 0.2s, color 0.2s',
-                        '&:hover': {
-                          backgroundColor: isSelected ? 'primary.light' : 'grey.200',
-                        },
-                      }}
-                    >
-                      {region}
-                    </Button>
-                  );
-                })}
-              {[...defaultCities, ...defaultRegions].length > 7 && !isOpen && (
+                return (
+                  <Button
+                    key={region}
+                    variant="text"
+                    onClick={() => setCurrentRegion(region)}
+                    aria-pressed={isSelected}
+                    sx={{
+                      minWidth: 0,
+                      px: 1.75,
+                      py: 1,
+                      borderRadius: '50px',
+                      textTransform: 'none',
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: isSelected ? 'text.secondary' : '#0D0D0D99',
+                      backgroundColor: isSelected ? 'primary.light' : 'grey.100',
+                      transition: 'background-color 0.2s, color 0.2s',
+                      '&:hover': {
+                        backgroundColor: isSelected ? 'primary.light' : 'grey.200',
+                      },
+                    }}
+                  >
+                    {region}
+                  </Button>
+                );
+              })}
+              {/* {[...defaultCities, ...defaultRegions].length > 7 && !isOpen && (
                 <Button
                   onClick={() => setIsOpen(true)}
                   sx={{
                     minWidth: 0,
                     px: 1.75,
                     py: 1,
-                    borderRadius: 1.5,
+                    borderRadius: '50px',
                     textTransform: 'none',
-                    fontSize: 14,
-                    fontWeight: 400,
-                    color: 'text.primary',
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: '#0D0D0D99',
                     backgroundColor: 'grey.100',
                     transition: 'background-color 0.2s, color 0.2s',
                     '&:hover': {
@@ -93,7 +102,7 @@ export default function SpareTimePage() {
                 >
                   <Typography>...</Typography>
                 </Button>
-              )}
+              )} */}
             </Box>
             {isOpen && (
               <Button onClick={() => setIsOpen(false)}>
