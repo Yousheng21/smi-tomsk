@@ -77,17 +77,37 @@ export default function NewsArticle({ news }: NewsArticleProps) {
 
         {/* Изображение */}
         <Box
-          component="img"
-          src={news.image}
-          alt={news.title}
           sx={{
-            display: 'block',
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover',
-            borderRadius: '16px',
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              height: '300px',
+              background:
+                'linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%)',
+              pointerEvents: 'none',
+              zIndex: 2,
+              borderRadius: '16px',
+            },
           }}
-        />
+        >
+          <Box
+            component="img"
+            src={news.image}
+            alt={news.title}
+            sx={{
+              display: 'block',
+              width: '100%',
+              height: 'auto',
+              maxHeight: 400,
+              objectFit: 'cover',
+              borderRadius: '16px',
+            }}
+          />
+        </Box>
 
         {/* Источник */}
         <Typography

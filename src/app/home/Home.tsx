@@ -6,34 +6,25 @@ import NewsList from './components/news/NewsList';
 import { PreviewEvents } from './components/previewEvents/PreviewEvents';
 import { LastNews } from './components/LastNews';
 import { Videos } from './components/videos/Videos';
+import { useAppStore } from '@/store/appStore';
+import { filters } from '@/constants/constants';
 
-const news = [
-  {
-    id: 1,
-    title: 'Томские Новости',
-    region: 'Томская область',
-  },
-  {
-    id: 2,
-    title: 'Томское Предместье',
-    region: 'Томский район',
-  },
-  {
-    id: 3,
-    title: 'Заря Севера',
-    region: 'Верхнекетский район',
-  },
-];
+const headTitle: Record<number, string> = {
+  1: 'Новости Томской области',
+  2: 'Новости Томского района',
+  3: 'Новости Верхнекетского района',
+};
 
 export const Home = () => {
-  const [selectNews, setSelectNews] = useState(1);
+  const { filter, setFilter } = useAppStore();
+
   return (
     <Box
       component={'main'}
       sx={{ px: 2, pb: 5, pt: 2, display: 'flex', flexDirection: 'column', gap: 6 }}
     >
       <Typography align="center" variant="h2">
-        Новости Томской области
+        {headTitle[filter]}
       </Typography>
       <Stack
         direction={{ xs: 'column', md: 'row' }}
@@ -46,12 +37,12 @@ export const Home = () => {
           //   width: { xs: 'auto', md: 581 },
         }}
       >
-        {news.map((i) => (
+        {filters.map((i) => (
           <Button
             key={i.id}
-            onClick={() => setSelectNews(i.id)}
+            onClick={() => setFilter(i.id)}
             sx={{
-              backgroundColor: selectNews === i.id ? 'primary.main' : 'transparent',
+              backgroundColor: filter === i.id ? 'primary.main' : 'transparent',
               width: { xs: '100%', md: 197 },
               mt: 3,
               borderRadius: { xs: 2, md: '50px' },
@@ -65,7 +56,7 @@ export const Home = () => {
             }}
           >
             <Stack direction={'row'} sx={{ alignItems: 'flex-start' }} spacing={0.5}>
-              {selectNews === i.id && (
+              {filter === i.id && (
                 <FmdGoodOutlinedIcon
                   sx={{
                     fill: 'white',
@@ -80,14 +71,14 @@ export const Home = () => {
                 <Typography
                   variant="body1"
                   sx={{ fontWeight: 600, fontSize: { md: '13px' } }}
-                  color={selectNews === i.id ? 'textSecondary' : 'textPrimary'}
+                  color={filter === i.id ? 'textSecondary' : 'textPrimary'}
                 >
                   {i.title}
                 </Typography>
                 <Typography
                   variant="caption"
                   sx={{ fontWeight: 400, fontSize: { md: '10px' } }}
-                  color={selectNews === i.id ? 'textSecondary' : 'textPrimary'}
+                  color={filter === i.id ? 'textSecondary' : 'textPrimary'}
                 >
                   {i.region}
                 </Typography>

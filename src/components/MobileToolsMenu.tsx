@@ -25,6 +25,9 @@ import {
 } from './icons/Icons';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import { usePathname } from 'next/navigation';
+import { useAppStore } from '@/store/appStore';
+import { filters } from '@/constants/constants';
+import FilterModal from './FilterModal';
 
 export const tools = [
   {
@@ -40,7 +43,7 @@ export const tools = [
     href: '/people',
   },
   {
-    title: 'На досуге',
+    title: 'Анонсы и события',
     href: '/spare-time',
   },
   {
@@ -71,12 +74,17 @@ export const socialLinks = [
 export default function MobileToolsMenu() {
   const pathName = usePathname();
   const [open, setOpen] = useState(false);
+  const [openFilter, setOpenFilter] = useState(false);
+
+  const { filter } = useAppStore();
 
   const closeMenu = () => setOpen(false);
 
+  const currentFilter = filters.filter((i) => i.id === filter)[0];
+
   return (
     <Box sx={{ justifySelf: 'flex-start', flex: 1, display: { xs: 'inline-flex', md: 'none' } }}>
-      <IconButton aria-label="Открыть меню" onClick={() => setOpen(true)}>
+      <IconButton aria-label="Открыть меню" sx={{ pl: '16px' }} onClick={() => setOpen(true)}>
         <IconBurgerMenu />
       </IconButton>
 
@@ -155,6 +163,7 @@ export default function MobileToolsMenu() {
           </List>
 
           <Button
+            onClick={() => setOpenFilter(true)}
             sx={{
               backgroundColor: 'primary.main',
               width: '100%',
@@ -172,11 +181,11 @@ export default function MobileToolsMenu() {
             <Stack direction={'row'} spacing={1}>
               <FmdGoodOutlinedIcon sx={{ fill: 'white' }} />
               <Typography variant="body1" color="textSecondary">
-                Томские Новости
+                {currentFilter.title}
               </Typography>
             </Stack>
             <Typography variant="caption" color="textSecondary">
-              Томская область
+              {currentFilter.region}
             </Typography>
           </Button>
 
@@ -199,6 +208,8 @@ export default function MobileToolsMenu() {
             ))}
           </Stack>
         </Box>
+
+        <FilterModal open={openFilter} onClose={() => setOpenFilter(false)} />
       </Drawer>
     </Box>
   );

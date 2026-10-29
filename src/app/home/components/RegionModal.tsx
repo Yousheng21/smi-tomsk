@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Dialog, DialogContent, Box, Typography, IconButton, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import { useAppStore } from '@/store/appStore';
+import { tags2, tags3 } from '@/constants/constants';
 
 interface RegionModalProps {
   open: boolean;
   onClose: () => void;
-  regions?: string[];
   selectedRegion?: string;
   onSelect?: (region: string) => void;
 }
@@ -27,13 +28,9 @@ export const defaultRegions = [
   'Шегарский р-н',
 ];
 
-export default function RegionModal({
-  open,
-  onClose,
-  regions = defaultRegions,
-  selectedRegion,
-  onSelect,
-}: RegionModalProps) {
+export default function RegionModal({ open, onClose, selectedRegion, onSelect }: RegionModalProps) {
+  const { filter } = useAppStore();
+
   const [internalRegion, setInternalRegion] = useState(selectedRegion ?? '');
 
   const currentRegion = selectedRegion ?? internalRegion;
@@ -42,6 +39,13 @@ export default function RegionModal({
     setInternalRegion(region);
     onSelect?.(region);
   };
+
+  const regions = useMemo(() => {
+    if (filter === 1) return defaultRegions;
+    if (filter === 2) return tags2.slice(1);
+    if (filter === 3) return tags3.slice(1);
+    return [];
+  }, [filter]);
 
   return (
     <Dialog

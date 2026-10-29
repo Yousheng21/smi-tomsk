@@ -77,7 +77,7 @@ const lastNews: LastNewsArticleCardProps[] = [
 
 export default function LastNewsArticleList() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', mb: '60px' }}>
       <Box
         sx={{
           display: 'grid',

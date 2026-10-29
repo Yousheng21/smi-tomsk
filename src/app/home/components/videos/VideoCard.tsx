@@ -111,7 +111,7 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
             }}
           />
         </Box>
-        <Box sx={{ p: '20px' }}>
+        <Box sx={{ p: '20px', pt: '30px' }}>
           <Typography
             variant="h6"
             component="h3"

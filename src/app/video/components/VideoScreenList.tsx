@@ -101,7 +101,6 @@ export default function VideoScreenList() {
           px: 2,
           py: 1,
           alignSelf: 'center',
-          mt: '32px',
         }}
       >
         <Typography color="textSecondary" align="center">
