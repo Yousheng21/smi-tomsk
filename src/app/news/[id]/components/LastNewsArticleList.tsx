@@ -77,7 +77,7 @@ const lastNews: LastNewsArticleCardProps[] = [
 
 export default function LastNewsArticleList() {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', mb: '60px' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
       <Box
         sx={{
           display: 'grid',
@@ -96,13 +96,13 @@ export default function LastNewsArticleList() {
         "banner banner banner"
       `,
           },
-          gap: { xs: 2, md: 2 },
+          gap: { xs: '10px', md: '20px' },
         }}
       >
         {lastNews.map((item) => (
           <LastNewsArticleCard key={item.href} {...item} />
         ))}
-        <Banner />
+        <Banner sx={{ mt: '12px' }} />
       </Box>
     </Box>
   );

@@ -20,7 +20,10 @@ export const Filters = () => {
   };
 
   return (
-    <Box component={'section'} sx={{ display: { xs: 'flex', lg: 'none' }, gap: 1, width: '100%' }}>
+    <Box
+      component={'section'}
+      sx={{ display: { xs: 'flex', lg: 'none' }, gap: 1, width: '100%', pb: '10px' }}
+    >
       <Button
         onClick={() => {
           setFilter('all');

@@ -22,7 +22,7 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
         flexDirection: 'column',
         width: '100%',
         minWidth: 0,
-        maxHeight: '426px',
+        maxHeight: '446px',
         // aspectRatio: image ? '4 / 4' : 'auto',
         overflow: 'hidden',
         borderRadius: 3,
@@ -78,7 +78,7 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
           sx={{
             position: 'relative',
             width: '100%',
-            height: '273px',
+            maxHeight: '273px',
             flexShrink: 0,
             overflow: 'hidden',
 
@@ -113,13 +113,11 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
         </Box>
         <Box sx={{ p: '20px', pt: '30px' }}>
           <Typography
-            variant="h6"
             component="h3"
             sx={{
               fontSize: { xs: 16, sm: 18, md: 20 },
               fontWeight: 700,
-              lineHeight: 1.3,
-              mb: 1.5,
+              mb: '20px',
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
               WebkitLineClamp: 2,
@@ -141,30 +139,29 @@ export default function VideoCard({ title, date, district, image, href }: VideoC
             }}
           >
             <Typography
-              variant="caption"
               sx={{
-                fontSize: 12,
+                fontSize: 14,
                 flexShrink: 0,
-                fontWeight: 400,
+                fontWeight: 500,
+                color: '#0D0D0D99',
               }}
             >
               {date}
             </Typography>
 
             <Typography
-              variant="caption"
               sx={{
                 fontSize: 12,
                 color: 'var(--accent)',
-                fontWeight: image ? 700 : 500,
+                fontWeight: 500,
                 textAlign: 'right',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
                 minWidth: 0,
-                borderRadius: 2,
-                p: 0.5,
-                px: 1,
+                borderRadius: '60px',
+                py: '10px',
+                px: '16px',
                 backgroundColor: '#16AD621A',
               }}
             >

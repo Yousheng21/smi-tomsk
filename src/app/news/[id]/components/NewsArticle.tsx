@@ -111,11 +111,11 @@ export default function NewsArticle({ news }: NewsArticleProps) {
 
         {/* Источник */}
         <Typography
-          variant="caption"
           sx={{
             display: 'block',
-            color: 'var(--grey-500)',
-            fontSize: '0.8rem',
+            color: '#0D0D0DCC',
+            fontSize: '13px',
+            fontWeight: 400,
           }}
         >
           Источник: {news.source}
@@ -125,8 +125,9 @@ export default function NewsArticle({ news }: NewsArticleProps) {
         <Typography
           component="div"
           sx={{
-            fontSize: '1rem',
-            lineHeight: 1.8,
+            fontSize: 16,
+            fontWeight: 400,
+            mt: '12px',
             whiteSpace: 'pre-line',
             overflowWrap: 'anywhere',
             '& p': {},

@@ -89,6 +89,7 @@ export default function SearchModal({ onSearch }: SearchModalProps) {
             sx={{
               display: 'flex',
               alignItems: 'center',
+              flexDirection: { xs: 'column', sm: 'row' },
               gap: 1,
             }}
           >
@@ -143,7 +144,7 @@ export default function SearchModal({ onSearch }: SearchModalProps) {
               variant="contained"
               disabled={!query.trim()}
               sx={{
-                minWidth: 'auto',
+                minWidth: { xs: '70%', sm: 'auto' },
                 px: { xs: 1.5, sm: 2.5 },
                 py: 1.25,
                 borderRadius: 2,

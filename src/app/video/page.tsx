@@ -14,7 +14,13 @@ export default function VideoPage() {
       </Suspense>
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
         <Box
-          sx={{ display: 'flex', flexDirection: 'column', gap: '32px', px: 2, pb: 5, pt: '8px' }}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+            px: { xs: 2, xl: 0 },
+            pb: { xs: '20px', lg: '72px' },
+          }}
         >
           <Typography align="center" sx={{ fontSize: 36, fontWeight: 700, color: '#0D0D0D' }}>
             Видео

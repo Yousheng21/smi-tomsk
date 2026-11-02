@@ -3,14 +3,25 @@
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Box, Button, Container, Typography } from '@mui/material';
-import { Suspense, useState } from 'react';
+import { Suspense, useMemo, useState } from 'react';
 import { defaultCities } from '../home/components/CityModal';
 import { defaultRegions } from '../home/components/RegionModal';
 import { AboutListScreen } from './components/AboutListScreen';
+import { tags2, tags3 } from '@/constants/constants';
+import { useAppStore } from '@/store/appStore';
 
 export default function AboutPage() {
-  const [currentRegion, setCurrentRegion] = useState('');
+  const [currentRegion, setCurrentRegion] = useState('Все');
   const [isOpen, setIsOpen] = useState(false);
+
+  const { filter } = useAppStore();
+
+  const filters = useMemo(() => {
+    if (filter === 1) return ['Все', ...defaultCities, ...defaultRegions];
+    if (filter === 2) return tags2;
+    if (filter === 3) return tags3;
+    return [];
+  }, [filter]);
 
   return (
     <>
@@ -25,9 +36,7 @@ export default function AboutPage() {
             gap: '32px',
             alignItems: 'center',
             px: { xs: 2, xl: 0 },
-            pb: 5,
-            pt: 2,
-            mb: '60px',
+            pb: { xs: '20px', lg: '72px' },
           }}
         >
           <Typography align="center" sx={{ fontSize: 36, fontWeight: 700, color: '#0D0D0D' }}>
@@ -39,7 +48,14 @@ export default function AboutPage() {
             или чиновничьим равнодушием.
           </Typography>
 
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: '50px' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              mb: { xs: 0, lg: '48px' },
+            }}
+          >
             <Typography variant="h6" sx={{ fontWeight: '700', fontSize: '16px' }}>
               Новости по тегам:
             </Typography>
@@ -53,7 +69,7 @@ export default function AboutPage() {
                 maxWidth: 967,
               }}
             >
-              {['Все', ...defaultCities, ...defaultRegions].map((region) => {
+              {filters.map((region) => {
                 const isSelected = currentRegion === region;
 
                 return (
