@@ -85,8 +85,8 @@ export default function VideoScreenList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          mt: 8,
-          gap: { xs: 2, md: 3 },
+          mt: { xs: '20px', lg: '48px' },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         {videos.map((item) => (
@@ -97,13 +97,13 @@ export default function VideoScreenList() {
       <Button
         sx={{
           backgroundColor: 'black',
-          borderRadius: 3,
-          px: 2,
-          py: 1,
+          borderRadius: '50px',
+          px: '20px',
+          py: '16px',
           alignSelf: 'center',
         }}
       >
-        <Typography color="textSecondary" align="center">
+        <Typography color="textSecondary" sx={{ fontWeight: 600, fontSize: '13px' }} align="center">
           Показать ещё
         </Typography>
       </Button>
@@ -116,8 +116,8 @@ export default function VideoScreenList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: '1fr 2fr',
           },
-          mt: 10,
-          gap: { xs: 2, md: 3 },
+          mt: { xs: '20px', lg: '48px' },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         <Banner isArea={false} />

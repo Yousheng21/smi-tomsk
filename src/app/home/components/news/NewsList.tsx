@@ -66,13 +66,14 @@ export default function NewsList({ news = newsDefault }: { news?: NewsCardProps[
         "banner  banner   banner"
       `,
         },
-        gap: { xs: 2, md: 3 },
+        gap: { xs: '10px', md: '20px' },
+        my: { lg: '48px' },
       }}
     >
       {news.map((item, index) => (
         <NewsCard key={item.href} {...item} index={index} />
       ))}
-      <Banner />
+      <Banner sx={{ mt: { lg: '60px' } }} />
     </Box>
   );
 }

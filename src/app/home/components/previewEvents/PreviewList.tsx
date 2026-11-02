@@ -38,7 +38,7 @@ export default function PreviewList() {
           sm: 'repeat(2, minmax(0, 1fr))',
           lg: 'repeat(3, minmax(0, 1fr))',
         },
-        gap: { xs: 2, md: 3 },
+        gap: { xs: '10px', md: '21px' },
       }}
     >
       {events.map((item) => (

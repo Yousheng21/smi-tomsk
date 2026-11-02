@@ -21,9 +21,18 @@ export const Home = () => {
   return (
     <Box
       component={'main'}
-      sx={{ px: 2, pb: 5, pt: 2, display: 'flex', flexDirection: 'column', gap: 6 }}
+      sx={{
+        px: 2,
+        mb: { xs: '20px', lg: '37px' },
+        display: 'flex',
+        flexDirection: 'column',
+        gap: { xs: '10px', lg: '32px' },
+      }}
     >
-      <Typography align="center" variant="h2">
+      <Typography
+        align="center"
+        sx={{ mb: { xs: '22px', lg: 0 }, fontSize: { xs: '24px', lg: '36px' }, fontWeight: 700 }}
+      >
         {headTitle[filter]}
       </Typography>
       <Stack
@@ -34,6 +43,7 @@ export const Home = () => {
           borderRadius: { xs: 2, md: '50px' },
           alignSelf: { xs: 'auto', md: 'center' },
           p: 0.5,
+          mb: { xs: '22px', lg: 0 },
           //   width: { xs: 'auto', md: 581 },
         }}
       >

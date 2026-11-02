@@ -78,15 +78,14 @@ export default function AboutCardScreen({
             sx={{
               fontSize: { xs: 16, sm: 18, md: 20 },
               fontWeight: 700,
-              lineHeight: 1.3,
-              mb: 1.5,
+              mb: '10px',
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
               WebkitLineClamp: image ? 3 : 2,
               maxWidth: 692,
               overflow: 'hidden',
               overflowWrap: 'anywhere',
-              color: image ? 'white' : 'text.primary',
+              color: image ? 'white' : '#0D0D0D',
             }}
           >
             {title}
@@ -104,10 +103,10 @@ export default function AboutCardScreen({
             <Typography
               variant="caption"
               sx={{
-                fontSize: 12,
-                color: image ? 'white' : 'text.primary',
+                fontSize: 14,
+                color: image ? '#FFFFFFCC' : '#0D0D0D99',
                 flexShrink: 0,
-                fontWeight: 400,
+                fontWeight: 500,
               }}
             >
               {date}
@@ -123,10 +122,10 @@ export default function AboutCardScreen({
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
                 minWidth: 0,
-                borderRadius: 2,
                 fontWeight: image ? 700 : 500,
-                p: 0.5,
-                px: 1,
+                borderRadius: '60px',
+                p: '10px',
+                px: '16px',
                 backgroundColor: !image ? '#16AD621A' : 'transparent',
               }}
             >

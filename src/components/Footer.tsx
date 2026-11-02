@@ -7,7 +7,10 @@ import { socialLinks } from './MobileToolsMenu';
 
 export const Footer = () => {
   return (
-    <Box component={'footer'} sx={{ backgroundColor: 'black', px: '16px', py: '60px' }}>
+    <Box
+      component={'footer'}
+      sx={{ backgroundColor: 'black', px: '16px', py: '60px', mt: { xs: '10px', lg: '48px' } }}
+    >
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
         <Stack direction={'column'} sx={{ px: { xs: 0, xl: '16px' } }} spacing={{ xs: 3, lg: 7 }}>
           <Stack
@@ -29,20 +32,20 @@ export const Footer = () => {
                   <IconLogo />
                   <Typography
                     variant="body1"
-                    sx={{ fontSize: { xs: 20, md: 26 } }}
+                    sx={{ fontSize: { xs: 20, md: 26 }, fontWeight: 500 }}
                     color="textSecondary"
                   >
-                    <b>СМИ.</b>Сердце Сибири
+                    <b style={{ fontWeight: 800 }}>СМИ.</b>Сердце Сибири
                   </Typography>
                 </Stack>
               </Button>
-              <Typography color="textSecondary">
+              <Typography color="textSecondary" sx={{ fontWeight: 500, fontSize: '16px' }}>
                 Региональные средства массовой информации{' '}
               </Typography>
             </div>
 
             <Stack spacing={'20px'}>
-              <Typography sx={{ fontWeight: 700 }} color="textSecondary">
+              <Typography sx={{ fontWeight: 700, fontSize: '18px' }} color="textSecondary">
                 Подписывайтесь на СМИ.Сердце Сибири:
               </Typography>
 
@@ -52,7 +55,9 @@ export const Footer = () => {
                   spacing={1.5}
                   sx={{ borderRight: { xs: 'none', lg: '1px solid #ffffff49' }, paddingRight: 2 }}
                 >
-                  <Typography color="textSecondary">Томские Новости</Typography>
+                  <Typography color="textSecondary" sx={{ fontWeight: 500, fontSize: '16px' }}>
+                    Томские Новости
+                  </Typography>
                   <Stack direction={'row'} spacing={1} sx={{ mt: 3 }}>
                     {socialLinks?.map((link, index) => (
                       <Button
@@ -82,7 +87,9 @@ export const Footer = () => {
                   spacing={1.5}
                   sx={{ borderRight: { xs: 'none', lg: '1px solid #ffffff49' }, paddingRight: 2 }}
                 >
-                  <Typography color="textSecondary">Томское Предместье</Typography>
+                  <Typography color="textSecondary" sx={{ fontWeight: 500, fontSize: '16px' }}>
+                    Томское Предместье
+                  </Typography>
                   <Stack direction={'row'} spacing={1} sx={{ mt: 3 }}>
                     {socialLinks.map((link, index) => (
                       <Button
@@ -107,7 +114,9 @@ export const Footer = () => {
                 </Stack>
 
                 <Stack direction={'column'} spacing={1.5}>
-                  <Typography color="textSecondary">Заря Севера</Typography>
+                  <Typography color="textSecondary" sx={{ fontWeight: 500, fontSize: '16px' }}>
+                    Заря Севера
+                  </Typography>
                   <Stack direction={'row'} spacing={1} sx={{ mt: 3 }}>
                     {socialLinks.map((link, index) => (
                       <Button
@@ -135,14 +144,26 @@ export const Footer = () => {
 
           <Stack direction={{ xs: 'column', lg: 'row' }} sx={{ justifyContent: 'space-between' }}>
             <Box sx={{ flex: 1, p: 1 }}>
-              <Typography color="textSecondary">Телефон редакции:</Typography>
-              <Typography sx={{ fontWeight: 700, fontSize: 20 }} color="textSecondary">
+              <Typography sx={{ fontSize: 16, fontWeight: 500, color: '#FFFFFF99' }}>
+                Телефон редакции:
+              </Typography>
+              <Typography
+                component="a"
+                href="tel:+70000000000"
+                sx={{ fontWeight: 700, fontSize: 20 }}
+                color="textSecondary"
+              >
                 8(000)00-00-000
               </Typography>
             </Box>
             <Box sx={{ flex: 1, p: 1 }}>
               <Typography color="textSecondary">Электронная почта:</Typography>
-              <Typography sx={{ fontWeight: 700, fontSize: 20 }} color="textSecondary">
+              <Typography
+                component="a"
+                href="mailto:info@smi.tomsk"
+                sx={{ fontWeight: 700, fontSize: 20 }}
+                color="textSecondary"
+              >
                 info@smi.tomsk
               </Typography>
             </Box>
@@ -157,16 +178,27 @@ export const Footer = () => {
           <Stack direction={{ xs: 'column', lg: 'row' }} sx={{ justifyContent: 'space-between' }}>
             <Stack direction={'column'} spacing={'30px'} sx={{ p: 1, flex: 1 }}>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Название СМИ:</Typography>
-                <Typography color="textSecondary">Томские Новости (Томская область)</Typography>
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Название СМИ:
+                </Typography>
+                <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
+                  Томские Новости (Томская область)
+                </Typography>
               </Box>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Учредитель:</Typography>
-                <Typography color="textSecondary">{`Редакция газеты "Томские новости"`}</Typography>
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Учредитель:
+                </Typography>
+                <Typography
+                  sx={{ fontSize: 16, fontWeight: 500 }}
+                  color="textSecondary"
+                >{`Редакция газеты "Томские новости"`}</Typography>
               </Box>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Сведения об организации:</Typography>
-                <Typography color="textSecondary">
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Сведения об организации:
+                </Typography>
+                <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
                   Использование и копирование материалов сайта допустимо только с письменного
                   разрешения редакции «Томских новостей»
                 </Typography>
@@ -175,16 +207,27 @@ export const Footer = () => {
 
             <Stack direction={'column'} spacing={'30px'} sx={{ p: 1, flex: 1 }}>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Название СМИ:</Typography>
-                <Typography color="textSecondary">Томское Предместье (Томский район)</Typography>
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Название СМИ:
+                </Typography>
+                <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
+                  Томское Предместье (Томский район)
+                </Typography>
               </Box>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Учредитель:</Typography>
-                <Typography color="textSecondary">{`Редакция газеты "Томское Предместье"`}</Typography>
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Учредитель:
+                </Typography>
+                <Typography
+                  sx={{ fontSize: 16, fontWeight: 500 }}
+                  color="textSecondary"
+                >{`Редакция газеты "Томское Предместье"`}</Typography>
               </Box>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Сведения об организации:</Typography>
-                <Typography color="textSecondary">
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Сведения об организации:
+                </Typography>
+                <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
                   Использование и копирование материалов сайта допустимо только с письменного
                   разрешения редакции «Томское Предместье»
                 </Typography>
@@ -192,16 +235,25 @@ export const Footer = () => {
             </Stack>
             <Stack direction={'column'} spacing={'30px'} sx={{ p: 1, flex: 1 }}>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Название СМИ:</Typography>
-                <Typography color="textSecondary">Заря Севера (Верхнекетский район)</Typography>
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 16, fontWeight: 500 }}>
+                  Название СМИ:
+                </Typography>
+                <Typography color="textSecondary" sx={{ fontSize: 16, fontWeight: 500 }}>
+                  Заря Севера (Верхнекетский район)
+                </Typography>
               </Box>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Учредитель:</Typography>
-                <Typography color="textSecondary">{`Редакция газеты "Заря Севера"`}</Typography>
+                <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+                  Учредитель:
+                </Typography>
+                <Typography
+                  color="textSecondary"
+                  sx={{ fontSize: 16, fontWeight: 500 }}
+                >{`Редакция газеты "Заря Севера"`}</Typography>
               </Box>
               <Box>
-                <Typography sx={{ color: 'var(--grey-400)' }}>Сведения об организации:</Typography>
-                <Typography color="textSecondary">
+                <Typography sx={{ color: '#FFFFFF99' }}>Сведения об организации:</Typography>
+                <Typography color="textSecondary" sx={{ fontSize: 16, fontWeight: 500 }}>
                   Использование и копирование материалов сайта допустимо только с письменного
                   разрешения редакции «Заря Севера»
                 </Typography>
@@ -216,12 +268,34 @@ export const Footer = () => {
             sx={{ justifyContent: 'space-between' }}
             spacing={2}
           >
-            <Typography sx={{ color: 'var(--grey-400)' }}>© 2026 Все права защищены.</Typography>
+            <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
+              © 2026 Все права защищены.
+            </Typography>
             <Stack direction={{ xs: 'column', lg: 'row' }} spacing={2}>
-              <Typography sx={{ color: 'var(--grey-400)', textDecoration: 'underline' }}>
+              <Typography
+                component={'a'}
+                href=""
+                target="_blank"
+                sx={{
+                  color: '#FFFFFF99',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: 'underline',
+                }}
+              >
                 Договор оферты
               </Typography>
-              <Typography sx={{ color: 'var(--grey-400)', textDecoration: 'underline' }}>
+              <Typography
+                component={'a'}
+                href=""
+                target="_blank"
+                sx={{
+                  color: '#FFFFFF99',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: 'underline',
+                }}
+              >
                 Политика обработки персональных данных
               </Typography>
             </Stack>

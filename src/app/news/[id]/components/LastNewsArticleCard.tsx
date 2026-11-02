@@ -75,8 +75,7 @@ export default function LastNewsArticleCard({
           sx={{
             fontSize: { xs: 16, sm: 18, md: 20 },
             fontWeight: 700,
-            lineHeight: 1.3,
-            mb: 1.5,
+            mb: '10px',
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
             WebkitLineClamp: 3,
@@ -100,10 +99,10 @@ export default function LastNewsArticleCard({
           <Typography
             variant="caption"
             sx={{
-              fontSize: 12,
-              color: image ? 'white' : 'text.primary',
+              fontSize: 14,
+              color: image ? '#FFFFFFCC' : 'text.primary',
               flexShrink: 0,
-              fontWeight: 400,
+              fontWeight: 500,
             }}
           >
             {date}

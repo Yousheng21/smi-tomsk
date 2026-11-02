@@ -39,7 +39,7 @@ export default function VideoList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          gap: { xs: 2, md: 3 },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         {videos.map((item) => (
@@ -49,14 +49,14 @@ export default function VideoList() {
 
       <Box
         sx={{
-          display: 'grid',
+          display: { xs: 'none', lg: 'grid' },
           gridTemplateColumns: {
             xs: '1fr',
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: '1fr 2fr',
           },
-          mt: 10,
-          gap: { xs: 2, md: 3 },
+          mt: '80px',
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         <Banner isArea={false} />

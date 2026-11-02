@@ -23,7 +23,10 @@ export const Header = () => {
 
   return (
     <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
-      <Box component={'header'} sx={{ py: 4, mb: { xs: '10px', md: 5 }, pr: '16px' }}>
+      <Box
+        component={'header'}
+        sx={{ py: { xs: '26px', lg: '20px' }, mb: { xs: '10px', lg: '80px' }, pr: '16px' }}
+      >
         <Stack
           direction={'row'}
           spacing={2}
@@ -55,7 +58,8 @@ export const Header = () => {
                 <Typography
                   align="center"
                   sx={{
-                    fontSize: 14,
+                    fontSize: '14px',
+                    fontWeight: 600,
                     color: pathName === tool.href ? 'var(--green-700)' : 'black',
                   }}
                 >
@@ -141,10 +145,10 @@ export const Header = () => {
                   <FmdGoodOutlinedIcon sx={{ fill: 'white', width: 14, height: 20 }} />
                 </Box>
                 <Stack>
-                  <Typography sx={{ fontSize: '0.8rem' }} color="textSecondary">
+                  <Typography sx={{ fontSize: '13px', fontWeight: 600 }} color="textSecondary">
                     {currentFilter.title}
                   </Typography>
-                  <Typography sx={{ fontSize: '0.6rem' }} color="textSecondary">
+                  <Typography sx={{ fontSize: '10px', fontWeight: 400 }} color="textSecondary">
                     {currentFilter.region}
                   </Typography>
                 </Stack>

@@ -45,14 +45,16 @@ export default function NewsCard({
     <>
       {isDesktop1200 && index === 1 && (
         <Box>
-          <Typography variant="h6">Новости по тегам:</Typography>
+          <Typography sx={{ color: '#0D0D0DCC', fontWeight: 700, fontSize: '16px' }}>
+            Новости по тегам:
+          </Typography>
           <Box
             sx={{
               display: { xs: 'none', lg: 'flex' },
               flexWrap: 'wrap',
-              gap: 1,
+              gap: '10px',
               gridArea: 'filters',
-              mt: 2,
+              mt: '16px',
             }}
           >
             {filters.slice(0, isOpen ? filters.length : 13).map((region) => {
@@ -167,8 +169,7 @@ export default function NewsCard({
             sx={{
               fontSize: { xs: 16, sm: 18, md: 20 },
               fontWeight: 700,
-              lineHeight: 1.3,
-              mb: 1.5,
+              mb: '10px',
               display: '-webkit-box',
               WebkitBoxOrient: 'vertical',
               WebkitLineClamp: image ? 3 : 2,
@@ -186,23 +187,20 @@ export default function NewsCard({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: 1,
             }}
           >
             <Typography
-              variant="caption"
               sx={{
-                fontSize: 12,
-                color: image ? 'white' : 'text.primary',
+                fontSize: 14,
+                color: image ? '#FFFFFFCC' : '#0D0D0D99',
                 flexShrink: 0,
-                fontWeight: 400,
+                fontWeight: 500,
               }}
             >
               {date}
             </Typography>
 
             <Typography
-              variant="caption"
               sx={{
                 fontSize: 12,
                 color: image ? 'var(--primary)' : 'var(--accent)',
@@ -212,9 +210,9 @@ export default function NewsCard({
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
                 minWidth: 0,
-                borderRadius: 2,
-                p: 0.5,
-                px: 1,
+                borderRadius: '60px',
+                py: '10px',
+                px: '16px',
                 backgroundColor: !image ? '#16AD621A' : 'transparent',
               }}
             >

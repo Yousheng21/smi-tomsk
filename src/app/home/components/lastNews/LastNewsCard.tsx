@@ -75,11 +75,10 @@ export default function LastNewsCard({
           sx={{
             fontSize: { xs: 16, sm: 18, md: 20 },
             fontWeight: 700,
-            lineHeight: 1.3,
-            mb: 1.5,
+            mb: '10px',
             display: '-webkit-box',
             WebkitBoxOrient: 'vertical',
-            WebkitLineClamp: 3,
+            WebkitLineClamp: 2,
             overflow: 'hidden',
             overflowWrap: 'anywhere',
             color: image ? 'white' : 'text.primary',
@@ -100,10 +99,10 @@ export default function LastNewsCard({
           <Typography
             variant="caption"
             sx={{
-              fontSize: 12,
-              color: image ? 'white' : 'text.primary',
+              fontSize: 14,
+              color: image ? '#FFFFFFCC' : '#0D0D0D99',
               flexShrink: 0,
-              fontWeight: 400,
+              fontWeight: 500,
             }}
           >
             {date}
@@ -120,9 +119,9 @@ export default function LastNewsCard({
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
               minWidth: 0,
-              borderRadius: 2,
-              p: 0.5,
-              px: 1,
+              borderRadius: '60px',
+              p: '10px',
+              px: '16px',
               backgroundColor: !image ? '#16AD621A' : 'transparent',
             }}
           >

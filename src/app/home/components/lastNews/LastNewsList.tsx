@@ -85,7 +85,7 @@ export default function LastNewsList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          gap: { xs: 2, md: 2 },
+          gap: { xs: '10px', lg: '20px' },
           gridTemplateAreas: {
             xs: 'none',
             sm: 'none',
@@ -101,10 +101,10 @@ export default function LastNewsList() {
         {lastNews.map((item) => (
           <LastNewsCard key={item.href} {...item} />
         ))}
-        <Banner />
+        <Banner sx={{ mb: { xs: '10px', lg: 0 } }} />
       </Box>
 
-      <Divider sx={{ my: 5 }} />
+      <Divider sx={{ my: '52px', display: { xs: 'none', lg: 'inline-flex' } }} />
 
       <Box
         sx={{
@@ -115,7 +115,7 @@ export default function LastNewsList() {
             lg: 'repeat(3, minmax(0, 1fr))',
           },
           gridTemplateAreas: 'none',
-          gap: { xs: 2, md: 2 },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         {lastNews.slice(0, 6).map((item) => (
@@ -123,9 +123,16 @@ export default function LastNewsList() {
         ))}
       </Box>
       <Button
-        sx={{ backgroundColor: 'black', borderRadius: 3, px: 2, py: 1, alignSelf: 'center', mt: 8 }}
+        sx={{
+          backgroundColor: 'black',
+          borderRadius: '50px',
+          px: 2,
+          py: 1,
+          alignSelf: 'center',
+          mt: '32px',
+        }}
       >
-        <Typography color="textSecondary" align="center">
+        <Typography sx={{ fontWeight: 600, fontSize: '13px' }} color="textSecondary" align="center">
           Показать ещё новости
         </Typography>
       </Button>

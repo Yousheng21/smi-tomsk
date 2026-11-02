@@ -68,23 +68,37 @@ export default function PreviewCard({
         <Box
           sx={{
             backgroundColor: 'primary.main',
-            p: 2,
-            pb: 1.5,
-            px: 1.5,
-            justifySelf: 'start',
+            width: { xs: 70, lg: 100 },
+            height: { xs: 70, lg: 100 },
             alignSelf: 'flex-start',
-            borderTopLeftRadius: 3,
-            borderBottomRightRadius: 20,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderTopLeftRadius: 22,
+            borderBottomRightRadius: 22,
           }}
         >
-          <Typography sx={{ lineHeight: 0.5 }} align="center" variant="h2">
+          <Typography
+            sx={{
+              fontWeight: 800,
+              fontSize: { xs: '32px', lg: '48px' },
+              lineHeight: { xs: 0.7, lg: 0.8 },
+            }}
+            align="center"
+            variant="h2"
+          >
             {date.day}
           </Typography>
-          <Typography sx={{ fontWeight: 800 }} align="center" variant="caption">
+          <Typography
+            sx={{ fontWeight: 800, fontSize: { xs: '10px', lg: '16px' } }}
+            align="center"
+            variant="caption"
+          >
             {date.month}
           </Typography>
         </Box>
-        <Box sx={{ mt: 5, display: 'flex', flexDirection: 'column', gap: 1.5, p: 2 }}>
+        <Box sx={{ mt: 5, display: 'flex', flexDirection: 'column', gap: '10px', p: '20px' }}>
           <Typography
             variant="h6"
             component="h3"
@@ -106,8 +120,11 @@ export default function PreviewCard({
           <Typography
             sx={{
               fontWeight: 500,
-              whiteSpace: 'nowrap',
               overflow: 'hidden',
+              display: '-webkit-box',
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: { xs: 1, lg: 2 },
+              fontSize: '16px',
               textOverflow: 'ellipsis',
             }}
           >
@@ -119,24 +136,23 @@ export default function PreviewCard({
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: 1,
+              gap: '6px',
+              mt: '10px',
             }}
           >
             <FmdGoodOutlinedIcon />
             <Typography
               variant="caption"
               sx={{
-                fontSize: 12,
+                fontSize: 13,
                 color: 'textSecondary',
-                fontWeight: image ? 700 : 500,
+                fontWeight: 500,
                 textAlign: 'right',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
                 whiteSpace: 'nowrap',
                 minWidth: 0,
                 borderRadius: 2,
-                p: 0.5,
-                px: 1,
                 backgroundColor: !image ? '#16AD621A' : 'transparent',
               }}
             >

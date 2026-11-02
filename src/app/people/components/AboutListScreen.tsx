@@ -135,7 +135,7 @@ export const AboutListScreen = () => {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          gap: { xs: 2, md: 3 },
+          gap: { xs: '10px', lg: '20px' },
           gridTemplateAreas: {
             xs: 'none',
             sm: 'none',
@@ -153,7 +153,15 @@ export const AboutListScreen = () => {
         ))}
         <Banner />
       </Box>
-      <Divider sx={{ my: 5, width: '100%', height: '1px', backgroundColor: '#0D0D0D1A' }} />
+      <Divider
+        sx={{
+          mt: { xs: '-2px', lg: '68px' },
+          mb: '20px',
+          width: '100%',
+          height: '1px',
+          backgroundColor: '#0D0D0D1A',
+        }}
+      />
       <Box
         sx={{
           display: 'grid',
@@ -172,7 +180,7 @@ export const AboutListScreen = () => {
         "eleven twelwe fourteen"
       `,
           },
-          gap: { xs: 2, md: 3 },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         {aboutDefault.slice(6).map((item, index) => (
@@ -182,13 +190,13 @@ export const AboutListScreen = () => {
       <Button
         sx={{
           backgroundColor: 'black',
-          borderRadius: 3,
-          px: 2,
-          py: 1,
+          borderRadius: '50px',
+          px: '20px',
+          py: '16px',
           alignSelf: 'center',
         }}
       >
-        <Typography color="textSecondary" align="center">
+        <Typography color="textSecondary" sx={{ fontWeight: 600, fontSize: '13px' }} align="center">
           Показать ещё новости
         </Typography>
       </Button>
@@ -201,7 +209,7 @@ export const AboutListScreen = () => {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: '1fr 2fr',
           },
-          mt: 10,
+          mt: '48px',
           gap: { xs: 2, md: 3 },
         }}
       >

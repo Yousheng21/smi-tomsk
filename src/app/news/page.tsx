@@ -36,8 +36,7 @@ export default function NewsPage() {
             alignItems: 'center',
             gap: '32px',
             px: { xs: 2, xl: 0 },
-            pb: 5,
-            pt: 2,
+            pb: { xs: '20px', lg: '72px' },
           }}
         >
           <Typography align="center" sx={{ fontSize: 36, fontWeight: 700, color: '#0D0D0D' }}>
@@ -48,8 +47,15 @@ export default function NewsPage() {
             Репортажи, интервью, аналитика и комментарии — всё, что происходит вокруг нас.
           </Typography>
 
-          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: '50px' }}>
-            <Typography variant="h6" sx={{ fontWeight: '700', fontSize: '16px' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              mb: { xs: 0, lg: '48px' },
+            }}
+          >
+            <Typography variant="h6" sx={{ fontWeight: 700, fontSize: '16px' }}>
               Новости по тегам:
             </Typography>
             <Box

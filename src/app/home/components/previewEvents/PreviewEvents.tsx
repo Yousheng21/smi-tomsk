@@ -6,10 +6,14 @@ import Link from 'next/link';
 
 export const PreviewEvents = () => {
   return (
-    <Box component={'section'}>
+    <Box component={'section'} sx={{ mb: { xs: '25px', lg: '48px' } }}>
       <Stack
         direction={'row'}
-        sx={{ justifyContent: 'space-between', alignItems: 'center', mb: 3 }}
+        sx={{
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          mb: { xs: '25px', lg: '32px' },
+        }}
       >
         <Typography sx={{ fontSize: { xs: 20, md: 36, fontWeight: 700 } }}>
           Анонсы и события

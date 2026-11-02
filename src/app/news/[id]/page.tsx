@@ -40,12 +40,11 @@ export default async function NewsPage({ params }: NewsPageProps) {
       <Container style={{ padding: 0 }} maxWidth="xl" sx={{ p: 0 }}>
         <Box
           sx={{
-            pb: 5,
-            pt: 2,
             display: 'flex',
             flexDirection: 'column',
-            gap: 3,
-            px: '16px',
+            gap: '32px',
+            px: { xs: 2, xl: 0 },
+            pb: { xs: '20px', lg: '72px' },
           }}
         >
           <NewsArticle news={news} />

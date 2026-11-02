@@ -64,8 +64,8 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          gap: { xs: 2, md: 3 },
-          rowGap: { xl: '80px' },
+          columnGap: { xs: '10px', lg: '20px' },
+          rowGap: { xs: '10px', xl: '80px' },
         }}
       >
         {events.map((item) => (
@@ -81,8 +81,8 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: '1fr 2fr',
           },
-          my: { xs: 5, xl: '40px' },
-          gap: { xs: 2, md: 3 },
+          my: { xs: '20px', xl: '48px' },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         <Banner isArea={false} />
@@ -97,7 +97,7 @@ export default function SpareTimeList() {
             sm: 'repeat(2, minmax(0, 1fr))',
             lg: 'repeat(3, minmax(0, 1fr))',
           },
-          gap: { xs: 2, md: 3 },
+          gap: { xs: '10px', lg: '20px' },
         }}
       >
         {events.slice(3).map((item) => (

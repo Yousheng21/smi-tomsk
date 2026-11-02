@@ -115,7 +115,7 @@ export default function MobileToolsMenu() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            p: 2,
+            p: '20px',
           }}
         >
           <Button>
@@ -127,8 +127,8 @@ export default function MobileToolsMenu() {
               }}
             >
               <IconLogo />
-              <Typography variant="body1" sx={{ color: '#000' }}>
-                <b>СМИ.</b>Сердце Сибири
+              <Typography sx={{ fontWeight: 500, fontSize: '20px', color: '#000' }}>
+                <b style={{ fontWeight: 800, fontSize: '20px' }}>СМИ.</b>Сердце Сибири
               </Typography>
             </Stack>
           </Button>
@@ -138,8 +138,8 @@ export default function MobileToolsMenu() {
           </IconButton>
         </Box>
 
-        <Box sx={{ overflowY: 'auto', flex: 1, py: 1, px: 3 }}>
-          <List>
+        <Box sx={{ overflowY: 'auto', flex: 1, p: '20px', pt: '12px' }}>
+          <List sx={{ display: 'flex', flexDirection: 'column', gap: '10px', p: 0 }}>
             {tools.map((tool) => (
               <ListItemButton
                 key={tool.href}
@@ -148,16 +148,20 @@ export default function MobileToolsMenu() {
                 onClick={closeMenu}
                 sx={{
                   mx: 0,
-                  borderRadius: 2,
-                  mb: 0.5,
-                  justifySelf: 'flex-start',
+                  borderRadius: '60px',
+                  alignSelf: 'flex-start',
                   backgroundColor: pathName === tool.href ? 'var(--green-50)' : 'transparent',
                 }}
               >
-                <ListItemText
-                  sx={{ color: pathName === tool.href ? 'var(--green-700)' : 'black' }}
-                  primary={tool.title}
-                />
+                <Typography
+                  sx={{
+                    color: pathName === tool.href ? 'var(--green-700)' : 'black',
+                    fontWeight: 600,
+                    fontSize: '14px',
+                  }}
+                >
+                  {tool.title}
+                </Typography>
               </ListItemButton>
             ))}
           </List>
@@ -167,9 +171,9 @@ export default function MobileToolsMenu() {
             sx={{
               backgroundColor: 'primary.main',
               width: '100%',
-              mt: 3,
-              borderRadius: 4,
-              py: 2,
+              mt: '20px',
+              borderRadius: '50px',
+              py: '14px',
               justifyContent: 'center',
               display: 'flex',
               flexDirection: 'column',
@@ -179,28 +183,30 @@ export default function MobileToolsMenu() {
             }}
           >
             <Stack direction={'row'} spacing={1}>
-              <FmdGoodOutlinedIcon sx={{ fill: 'white' }} />
-              <Typography variant="body1" color="textSecondary">
+              <FmdGoodOutlinedIcon sx={{ fill: 'white', width: 18, height: 24 }} />
+              <Typography sx={{ fontWeight: 600, fontSize: '13px' }} color="textSecondary">
                 {currentFilter.title}
               </Typography>
             </Stack>
-            <Typography variant="caption" color="textSecondary">
+            <Typography sx={{ fontWeight: 400, fontSize: '10px' }} color="textSecondary">
               {currentFilter.region}
             </Typography>
           </Button>
 
-          <Divider sx={{ background: 'red', my: 4 }} />
+          <Divider sx={{ background: 'red', my: '20px' }} />
 
-          <Typography>Томские Новости соц. сети:</Typography>
+          <Typography sx={{ fieldSizing: '16px', fontWeight: 500 }}>
+            Томские Новости соц. сети:
+          </Typography>
 
-          <Stack direction={'row'} spacing={1} sx={{ mt: 3 }}>
+          <Stack direction={'row'} spacing={'10px'} sx={{ mt: '20px' }}>
             {socialLinks.map((link, index) => (
               <Button
                 LinkComponent={'a'}
                 href={link.href}
                 target="_blank"
                 className="btnSocial"
-                sx={{ backgroundColor: 'var(--grey-200)', borderRadius: 1, py: 1, ':hover': {} }}
+                sx={{ backgroundColor: '#F3F3F3', borderRadius: 1, py: '6px', minWidth: '35px' }}
                 key={index}
               >
                 {link.icon}
