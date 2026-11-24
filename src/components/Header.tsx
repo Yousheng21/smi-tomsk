@@ -38,6 +38,33 @@ export const Header = () => {
           <Suspense fallback={null}>
             <MobileToolsMenu />
           </Suspense>
+
+          <Link style={{ flex: 0.5 }} href="/">
+            <Stack
+              direction={'row'}
+              spacing={1}
+              sx={{
+                alignItems: 'center',
+                justifyContent: { xs: 'center', md: 'start' },
+              }}
+            >
+              <IconLogo />
+              <Typography
+                variant="body1"
+                sx={{
+                  color: '#000',
+                  fontSize: { xs: 12, md: 26 },
+                  whiteSpace: 'nowrap',
+                  WebkitLineClamp: 1,
+                  '@media (min-width: 400px)': {
+                    fontSize: 20,
+                  },
+                }}
+              >
+                <b>Сердце Сибири</b> Медиа
+              </Typography>
+            </Stack>
+          </Link>
           <List
             sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px', flex: 1, width: '100%', m: 0 }}
           >
@@ -58,7 +85,7 @@ export const Header = () => {
                 <Typography
                   align="center"
                   sx={{
-                    fontSize: '14px',
+                    fontSize: '13px',
                     fontWeight: 600,
                     color: pathName === tool.href ? 'var(--green-700)' : 'black',
                   }}
@@ -68,33 +95,11 @@ export const Header = () => {
               </ListItemButton>
             ))}
           </List>
-          <Link style={{ flex: 1 }} href="/">
-            <Stack
-              direction={'row'}
-              spacing={1}
-              sx={{
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <IconLogo />
-              <Typography
-                variant="body1"
-                sx={{
-                  color: '#000',
-                  fontSize: { xs: 12, md: 26 },
-                  whiteSpace: 'nowrap',
-                  WebkitLineClamp: 1,
-                  '@media (min-width: 400px)': {
-                    fontSize: 20,
-                  },
-                }}
-              >
-                <b>СМИ.</b>Сердце Сибири
-              </Typography>
-            </Stack>
-          </Link>
-          <Stack direction={'row'} spacing={1} sx={{ flex: 1, justifyContent: 'flex-end' }}>
+          <Stack
+            direction={'row'}
+            spacing={1}
+            sx={{ flex: { xs: 0.1, lg: 0.8 }, justifyContent: 'flex-end' }}
+          >
             <Stack
               direction={'row'}
               spacing={0.1}

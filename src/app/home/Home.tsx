@@ -65,13 +65,13 @@ export const Home = () => {
               },
             }}
           >
-            <Stack direction={'row'} sx={{ alignItems: 'flex-start' }} spacing={0.5}>
+            <Stack direction={'row'} sx={{ alignItems: 'flex-start' }} spacing={0.7}>
               {filter === i.id && (
                 <FmdGoodOutlinedIcon
                   sx={{
                     fill: 'white',
-                    width: 14,
-                    height: { xs: 24, md: 20 },
+                    width: 17,
+                    height: { xs: 25, md: 20 },
                     alignSelf: 'flex-start',
                   }}
                 />

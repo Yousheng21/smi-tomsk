@@ -15,27 +15,26 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://smi-tomsk.vercel.app/'),
 
   title: {
-    default: 'СМИ. Сердце Сибири',
-    template: '%s | СМИ. Сердце Сибири',
+    default: 'Сердце Сибири Медиа',
+    template: '%s | Сердце Сибири Медиа',
   },
 
   description:
-    'СМИ. Сердце Сибири — новости Томской области, актуальные события, репортажи и публикации.',
+    'Сердце Сибири Медиа — новости Томской области, актуальные события, репортажи и публикации.',
 
-  applicationName: 'СМИ. Сердце Сибири',
+  applicationName: 'Сердце Сибири Медиа',
 
   keywords: [
-    'СМИ',
-    'Сердце Сибири',
+    'Сердце Сибири Медиа',
     'новости Томска',
     'новости Томской области',
     'Томская область',
     'события Томска',
   ],
 
-  authors: [{ name: 'СМИ. Сердце Сибири' }],
-  creator: 'СМИ. Сердце Сибири',
-  publisher: 'СМИ. Сердце Сибири',
+  authors: [{ name: 'Сердце Сибири Медиа' }],
+  creator: 'Сердце Сибири Медиа',
+  publisher: 'Сердце Сибири Медиа',
 
   robots: {
     index: false,
@@ -50,22 +49,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    siteName: 'СМИ. Сердце Сибири',
-    title: 'СМИ. Сердце Сибири',
+    siteName: 'Сердце Сибири Медиа',
+    title: 'Сердце Сибири Медиа',
     description: 'Новости Томской области, актуальные события, репортажи и публикации.',
     images: [
       {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'СМИ. Сердце Сибири',
+        alt: 'Сердце Сибири Медиа',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'СМИ. Сердце Сибири',
+    title: 'Сердце Сибири Медиа',
     description: 'Новости Томской области и актуальные события.',
     images: ['/opengraph-image.png'],
   },
