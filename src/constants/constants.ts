@@ -2,7 +2,7 @@ export const filters = [
   {
     id: 1,
     title: 'Томские Новости',
-    region: 'Томская область',
+    region: '',
   },
   {
     id: 2,

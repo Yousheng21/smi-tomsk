@@ -9,6 +9,7 @@ interface RegionModalProps {
   onClose: () => void;
   selectedRegion?: string;
   onSelect?: (region: string) => void;
+  onRemove?: () => void;
 }
 
 export const defaultRegions = [
@@ -28,7 +29,13 @@ export const defaultRegions = [
   'Шегарский р-н',
 ];
 
-export default function RegionModal({ open, onClose, selectedRegion, onSelect }: RegionModalProps) {
+export default function RegionModal({
+  open,
+  onClose,
+  selectedRegion,
+  onSelect,
+  onRemove,
+}: RegionModalProps) {
   const { filter } = useAppStore();
 
   const [internalRegion, setInternalRegion] = useState(selectedRegion ?? '');
@@ -36,8 +43,13 @@ export default function RegionModal({ open, onClose, selectedRegion, onSelect }:
   const currentRegion = selectedRegion ?? internalRegion;
 
   const handleSelect = (region: string) => {
-    setInternalRegion(region);
-    onSelect?.(region);
+    if (region === internalRegion) {
+      setInternalRegion('');
+      onRemove?.();
+    } else {
+      setInternalRegion(region);
+      onSelect?.(region);
+    }
   };
 
   const regions = useMemo(() => {

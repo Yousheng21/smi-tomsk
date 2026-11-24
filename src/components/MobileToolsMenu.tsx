@@ -43,11 +43,19 @@ export const tools = [
     href: '/people',
   },
   {
-    title: 'Анонсы и события',
+    title: 'На досуге',
     href: '/spare-time',
   },
   {
     title: 'Видео',
+    href: '/video',
+  },
+  {
+    title: 'О нас',
+    href: '/video',
+  },
+  {
+    title: 'Сотрудничество',
     href: '/video',
   },
 ];
@@ -83,7 +91,7 @@ export default function MobileToolsMenu() {
   const currentFilter = filters.filter((i) => i.id === filter)[0];
 
   return (
-    <Box sx={{ justifySelf: 'flex-start', flex: 1, display: { xs: 'inline-flex', md: 'none' } }}>
+    <Box sx={{ justifySelf: 'flex-start', flex: 0.1, display: { xs: 'inline-flex', md: 'none' } }}>
       <IconButton aria-label="Открыть меню" sx={{ pl: '16px' }} onClick={() => setOpen(true)}>
         <IconBurgerMenu />
       </IconButton>
@@ -127,8 +135,8 @@ export default function MobileToolsMenu() {
               }}
             >
               <IconLogo />
-              <Typography sx={{ fontWeight: 500, fontSize: '20px', color: '#000' }}>
-                <b style={{ fontWeight: 800, fontSize: '20px' }}>СМИ.</b>Сердце Сибири
+              <Typography sx={{ fontWeight: 500, fontSize: '17px', color: '#000' }}>
+                <b style={{ fontWeight: 800, fontSize: '17px' }}>Сердце Сибири</b> Медиа
               </Typography>
             </Stack>
           </Button>
@@ -183,7 +191,7 @@ export default function MobileToolsMenu() {
             }}
           >
             <Stack direction={'row'} spacing={1}>
-              <FmdGoodOutlinedIcon sx={{ fill: 'white', width: 18, height: 24 }} />
+              <FmdGoodOutlinedIcon sx={{ fill: 'white', width: 18, height: 20 }} />
               <Typography sx={{ fontWeight: 600, fontSize: '13px' }} color="textSecondary">
                 {currentFilter.title}
               </Typography>

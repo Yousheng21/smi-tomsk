@@ -8,6 +8,7 @@ interface CityModalProps {
   cities?: string[];
   selectedCity?: string;
   onSelect?: (city: string) => void;
+  onRemove?: () => void;
 }
 
 export const defaultCities = ['г. Томск', 'г. Северск (ЗАТО)', 'г. Стрежевой', 'г. Кедровый'];
@@ -18,14 +19,20 @@ export default function CityModal({
   cities = defaultCities,
   selectedCity,
   onSelect,
+  onRemove,
 }: CityModalProps) {
   const [internalCity, setInternalCity] = useState(selectedCity ?? '');
 
   const currentCity = selectedCity ?? internalCity;
 
   const handleSelect = (city: string) => {
-    setInternalCity(city);
-    onSelect?.(city);
+    if (city === internalCity) {
+      setInternalCity('');
+      onRemove?.();
+    } else {
+      setInternalCity(city);
+      onSelect?.(city);
+    }
   };
 
   return (

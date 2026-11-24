@@ -142,6 +142,11 @@ export const Filters = () => {
         open={openCity}
         onClose={() => setOpenCity(false)}
         selectedCity={city}
+        onRemove={() => {
+          setCity('');
+          setFilter('all');
+          setOpenCity(false);
+        }}
         onSelect={(c) => {
           setCity(c);
           setFilter('city');
@@ -153,6 +158,11 @@ export const Filters = () => {
         open={openRegion}
         onClose={() => setOpenRegion(false)}
         selectedRegion={region}
+        onRemove={() => {
+          setRegion('');
+          setFilter('all');
+          setOpenRegion(false);
+        }}
         onSelect={(c) => {
           setRegion(c);
           setFilter('region');

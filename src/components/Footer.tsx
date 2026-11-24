@@ -35,7 +35,7 @@ export const Footer = () => {
                     sx={{ fontSize: { xs: 20, md: 26 }, fontWeight: 500 }}
                     color="textSecondary"
                   >
-                    <b style={{ fontWeight: 800 }}>СМИ.</b>Сердце Сибири
+                    <b style={{ fontWeight: 800 }}>Сердце Сибири</b> Медиа
                   </Typography>
                 </Stack>
               </Button>
@@ -46,7 +46,7 @@ export const Footer = () => {
 
             <Stack spacing={'20px'}>
               <Typography sx={{ fontWeight: 700, fontSize: '18px' }} color="textSecondary">
-                Подписывайтесь на СМИ.Сердце Сибири:
+                Подписывайтесь на Сердце Сибири Медиа:
               </Typography>
 
               <Stack direction={{ xs: 'column', lg: 'row' }} spacing={{ xs: 1.5, lg: 5 }}>
@@ -182,7 +182,7 @@ export const Footer = () => {
                   Название СМИ:
                 </Typography>
                 <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
-                  Томские Новости (Томская область)
+                  Сердце Сибири Медиа
                 </Typography>
               </Box>
               <Box>
@@ -192,7 +192,7 @@ export const Footer = () => {
                 <Typography
                   sx={{ fontSize: 16, fontWeight: 500 }}
                   color="textSecondary"
-                >{`Редакция газеты "Томские новости"`}</Typography>
+                >{`Редакция "Сердце Сибири Медиа"`}</Typography>
               </Box>
               <Box>
                 <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
@@ -200,7 +200,7 @@ export const Footer = () => {
                 </Typography>
                 <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
                   Использование и копирование материалов сайта допустимо только с письменного
-                  разрешения редакции «Томских новостей»
+                  разрешения редакции «Сердце Сибири Медиа»
                 </Typography>
               </Box>
             </Stack>
@@ -211,7 +211,7 @@ export const Footer = () => {
                   Название СМИ:
                 </Typography>
                 <Typography sx={{ fontSize: 16, fontWeight: 500 }} color="textSecondary">
-                  Томское Предместье (Томский район)
+                  {`«Томское предместье»`}
                 </Typography>
               </Box>
               <Box>
@@ -221,7 +221,7 @@ export const Footer = () => {
                 <Typography
                   sx={{ fontSize: 16, fontWeight: 500 }}
                   color="textSecondary"
-                >{`Редакция газеты "Томское Предместье"`}</Typography>
+                >{`ООО "Томское предместье" (634535, Томская область, Томский район, с. Новорождественское, ул. Советская, 62, (3822) 26-41-85)`}</Typography>
               </Box>
               <Box>
                 <Typography sx={{ color: '#FFFFFF99', fontSize: 14, fontWeight: 500 }}>
@@ -239,7 +239,7 @@ export const Footer = () => {
                   Название СМИ:
                 </Typography>
                 <Typography color="textSecondary" sx={{ fontSize: 16, fontWeight: 500 }}>
-                  Заря Севера (Верхнекетский район)
+                  {`«Заря Севера»`}
                 </Typography>
               </Box>
               <Box>
@@ -249,7 +249,7 @@ export const Footer = () => {
                 <Typography
                   color="textSecondary"
                   sx={{ fontSize: 16, fontWeight: 500 }}
-                >{`Редакция газеты "Заря Севера"`}</Typography>
+                >{`ООО "Редакция газеты "Заря Севера" (636500, Томская область, Верхнекетский район, р.п. Белый Яр, уд. Калинина 1 "а", (38258) 2-66-35)`}</Typography>
               </Box>
               <Box>
                 <Typography sx={{ color: '#FFFFFF99' }}>Сведения об организации:</Typography>
