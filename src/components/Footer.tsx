@@ -56,7 +56,7 @@ export const Footer = () => {
                   sx={{ borderRight: { xs: 'none', lg: '1px solid #ffffff49' }, paddingRight: 2 }}
                 >
                   <Typography color="textSecondary" sx={{ fontWeight: 500, fontSize: '16px' }}>
-                    Томские Новости
+                    Сердце Сибири
                   </Typography>
                   <Stack direction={'row'} spacing={1} sx={{ mt: 3 }}>
                     {socialLinks?.map((link, index) => (
